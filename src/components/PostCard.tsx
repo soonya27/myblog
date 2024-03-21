@@ -13,7 +13,7 @@ export default function PostCard({
 }: Props) {
     return (
         <Link href={`/posts/${path}`}>
-            <div className='rounded-md overflow-hidden shadow-lg'>
+            <div className='rounded-lg overflow-hidden border hover:shadow-xl transition-transform hover:-translate-y-1 duration-200'>
                 <Image src={`/images/posts/${path}.png`} alt={title}
                     width={300} height={200}
                     className='w-full' />

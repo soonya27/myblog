@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from '@/components/Header';
 
-import { Open_Sans } from 'next/font/google';
+import { Noto_Sans_KR } from 'next/font/google';
 import Footer from '@/components/Footer';
 
-const snas = Open_Sans({ subsets: ["latin"] });
+const sans = Noto_Sans_KR({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,8 +18,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={snas.className}>
-      <body className='flex flex-col w-full max-w-screen-2xl mx-auto'>
+    <html lang="en" className={sans.className}>
+      <body className='flex flex-col w-full mx-auto'>
         <Header />
         <main className='grow'>
           {/* flex 중간 꽉채우기.. -> flex 자식요소 flex-grow :1 or flex: 1 1 auto (flex-auto) */}
