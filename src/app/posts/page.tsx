@@ -7,7 +7,7 @@ export default async function PostsPage() {
     const categories = [...new Set(posts.map(post => post.category))];
 
     return (
-        <div className='max-w-screen-2xl mx-auto'>
+        <div className='max-w-screen-2xl mx-auto p-4'>
             <FilterablePosts posts={posts} categories={categories} />
         </div>
     );

@@ -5,24 +5,132 @@ import tonLogo from '../../../public/images/ton_logodown_src_type_03.png';
 import LinkIcon from '@/components/ui/icons/LinkIcon';
 import DownForwardIcon from '@/components/ui/icons/DownForwardIcon';
 
+import jsImg from '../../../public/DevelopeSkillIcon/JavaScript.svg';
+import nextImg from '../../../public/DevelopeSkillIcon/NextJS-Dark.svg';
+import reactImg from '../../../public/DevelopeSkillIcon/React-Light.svg';
+import typeScriptImg from '../../../public/DevelopeSkillIcon/TypeScript.svg';
+import firebaseImg from '../../../public/DevelopeSkillIcon/Firebase-Light.svg';
+import tailwindImg from '../../../public/DevelopeSkillIcon/TailwindCSS-Light.svg';
+import jqueryImg from '../../../public/DevelopeSkillIcon/JQuery.svg';
+import bootstrapImg from '../../../public/DevelopeSkillIcon/Bootstrap.svg';
+import htmlImg from '../../../public/DevelopeSkillIcon/HTML.svg';
+import cssImg from '../../../public/DevelopeSkillIcon/CSS.svg';
+import sanityImg from '../../../public/DevelopeSkillIcon/sanity.svg';
+
+import nodeImg from '../../../public/DevelopeSkillIcon/NodeJS.svg';
+import javaImg from '../../../public/DevelopeSkillIcon/Java-Light.svg';
+import mysqlImg from '../../../public/DevelopeSkillIcon/MySQL-Light.svg';
+import figmaImg from '../../../public/DevelopeSkillIcon/Figma.svg';
+import xdImg from '../../../public/DevelopeSkillIcon/XD.svg';
+
+
+
+
 export default function AboutPage() {
     return (
         <section className='flex flex-col md:flex-row max-w-screen-2xl mx-auto'>
             <div className='lg:w-2/6 bg-[#fcd1d1] text-center py-10 [&>p]:mb-4'>
                 <Profile />
-                <h2 className='text-3xl text-[#284e74] border-b-4 font-bold border-[#284e74] my-4 pb-2'>Profile</h2>
-                <strong>NAME</strong>
-                <p>편소영 (Pyeon So Yeong)</p>
-                <strong>AGE</strong>
-                <p>1995.11.02</p>
-                <strong>E-MAIL</strong>
-                <p>psykor48@gmail.com</p>
-                <strong>github</strong>
-                <p className='flex items-center justify-center'><a target="_blank" href="https://github.com/soonya27" rel="noopener noreferrer"
-                    className='flex items-center ml-2 text-[#258ddb] text-sm'>
-                    <LinkIcon /><span className='ml-2'>https://github.com/soonya27</span></a></p>
-                <strong>CONTACT</strong>
-                <p>010.2770.4952</p>
+                <div className='px-3'>
+                    <h2 className='text-3xl text-[#284e74] border-b-4 font-bold border-[#284e74] my-4 pb-2'>Profile</h2>
+                    <strong>NAME</strong>
+                    <p>편소영 (Pyeon So Yeong)</p>
+                    <strong>AGE</strong>
+                    <p>1995.11.02</p>
+                    <strong>E-MAIL</strong>
+                    <p>psykor48@gmail.com</p>
+                    <strong>github</strong>
+                    <p className='flex items-center justify-center'><a target="_blank" href="https://github.com/soonya27" rel="noopener noreferrer"
+                        className='flex items-center ml-2 text-[#258ddb] text-sm'>
+                        <LinkIcon /><span className='ml-2'>https://github.com/soonya27</span></a></p>
+                    <strong>CONTACT</strong>
+                    <p>010.2770.4952</p>
+                </div>
+                <div className='px-3 py-3 [&>ul>li>p]:text-sm [&>ul>li>p]:font-semibold [&>ul>li>p]:mt-1'>
+                    <h2 className='text-3xl text-[#284e74] border-b-4 font-bold border-[#284e74] my-4 pb-2'>Skills</h2>
+                    <strong className='block mb-3'>💻 Front End 💻</strong>
+                    <ul className='grid grid-cols-5 gap-4  lg:grid-cols-5 md:grid-cols-4 [&>li]:flex [&>li]:flex-col [&>li]:items-center px-3'>
+                        <li>
+                            <Image src={htmlImg} alt="html" width={60} height={60} className='w-full ' />
+                            <p>html</p>
+                        </li>
+                        <li>
+                            <Image src={cssImg} alt="css" width={60} height={60} className='w-full ' />
+                            <p>css</p>
+                        </li>
+                        <li>
+                            <Image src={jqueryImg} alt="jquery" width={60} height={60} className='w-full ' />
+                            <p>jquery</p>
+                        </li>
+                        <li>
+                            <Image src={bootstrapImg} alt="bootstrap" width={60} height={60} className='w-full ' />
+                            <p>bootstrap</p>
+                        </li>
+                        <li>
+                            <Image src={tailwindImg} alt="tailwindCss" width={60} height={60} className='w-full ' />
+                            <p>tailwindCss</p>
+                        </li>
+                        <li>
+                            <Image src={jsImg} alt="Javascript" width={60} height={60} className='w-full ' />
+                            <p>Javascript</p>
+                        </li>
+                        <li>
+                            <Image src={typeScriptImg} alt="typescript" width={60} height={60} className='w-full ' />
+                            <p>typescript</p>
+                        </li>
+                        <li>
+                            <Image src={reactImg} alt="react" width={60} height={60} className='w-full ' />
+                            <p>react</p>
+                        </li>
+                        <li>
+                            <Image src={nextImg} alt="nextJs" width={60} height={60} className='w-full ' />
+                            <p>nextJs</p>
+                        </li>
+                    </ul>
+
+                    <strong className='block my-2 mt-4'>🖥 back End 🖥</strong>
+                    <ul className='grid grid-cols-5 gap-4  lg:grid-cols-5 md:grid-cols-4 [&>li]:flex [&>li]:flex-col [&>li]:items-center px-3'>
+                        <li>
+                            <Image src={firebaseImg} alt="firebase" width={60} height={60} className='w-full ' />
+                            <p>firebase</p>
+                        </li>
+                        <li>
+                            <div className='bg-[#F03E2F] w-full h-full rounded-xl flex justify-center items-center' >
+                                <Image src={sanityImg} alt="sanity" width={30} height={30} className='w-3/5 h-3/5' />
+                            </div>
+                            <p>sanity</p>
+                        </li>
+                    </ul>
+
+                    <strong className='block my-2 mt-4'>🍂 Communication 🍂</strong>
+                    <ul className='grid grid-cols-5 gap-4  lg:grid-cols-5 md:grid-cols-4 [&>li]:flex [&>li]:flex-col [&>li]:items-center px-3'>
+                        <li>
+                            <Image src={xdImg} alt="xd" width={60} height={60} className='w-full ' />
+                            <p>xd</p>
+                        </li>
+                        <li>
+                            <Image src={figmaImg} alt="figma" width={30} height={30} className='w-full' />
+                            <p>figma</p>
+                        </li>
+                    </ul>
+
+                    <strong className='block my-2 mt-4'>📚 Studying.. 📚</strong>
+                    <ul className='grid grid-cols-5 gap-4  lg:grid-cols-5 md:grid-cols-4 [&>li]:flex [&>li]:flex-col [&>li]:items-center px-3'>
+                        <li>
+                            <Image src={nodeImg} alt="xd" width={60} height={60} className='w-full ' />
+                            <p>node.js</p>
+                        </li>
+                        <li>
+                            <Image src={javaImg} alt="figma" width={30} height={30} className='w-full' />
+                            <p>java</p>
+                        </li>
+                        <li>
+                            <Image src={mysqlImg} alt="figma" width={30} height={30} className='w-full' />
+                            <p>mysql</p>
+                        </li>
+                    </ul>
+
+                </div>
             </div>
             <div className='lg:w-4/6 p-7 md:p-12 text-base'>
                 <dl>
@@ -55,6 +163,9 @@ export default function AboutPage() {
                                 <div className='ml-0 md:ml-3'>
                                     <p className='font-extrabold text-xl text-left md:text-center'>(주) 티온미디어</p>
                                     <span className='text-[#6c757d] text-left md:text-center block'>2021.04 ~ 2023.12</span>
+                                    <p className='flex items-center'><a target="_blank" href="https://www.t-onmedia.com/" rel="noopener noreferrer"
+                                        className='flex items-center ml-2 text-[#258ddb] text-sm'>
+                                        <LinkIcon /><span className='ml-2'>home page</span></a></p>
                                 </div>
                             </div>
 
@@ -153,7 +264,7 @@ export default function AboutPage() {
                 </dl>
 
             </div>
-        </section>
+        </section >
     );
 }
 

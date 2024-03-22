@@ -13,15 +13,19 @@ export default function PostCard({
 }: Props) {
     return (
         <Link href={`/posts/${path}`}>
-            <div className='rounded-lg overflow-hidden border hover:shadow-xl transition-transform hover:-translate-y-1 duration-200'>
+            <div className='relative rounded-2xl overflow-hidden border hover:shadow-xl transition-transform hover:-translate-y-1 duration-200'>
+                <span className='absolute left-3 top-3 text-xs rounded-3xl py-[0.2rem] px-[.7rem] leading-1 bg-[#fcd1d1] text-[#db5f5f] font-semibold'>
+                    {category}
+                </span>
                 <Image src={`/images/posts/${path}.png`} alt={title}
                     width={300} height={200}
-                    className='w-full' />
-                <div className='flex flex-col items-center p-4'>
-                    <time className='self-end'>{date.toString()}</time>
-                    <h3 className='text-lg font-bold'>{title}</h3>
-                    <p className='w-full text-center truncate'>{description}</p>
-                    <span className='text-sm rounded-lg bg-green-100 mt-2 px-2'>{category}</span>
+                    className='w-full h-52 md:h-40 object-cover' />
+                <div className='p-4 h-28'>
+                    <div className='flex flex-col'>
+                        <h3 className='text-lg font-bold w-full break-all line-clamp-2 leading-none mb-2'>{title}</h3>
+                        <p className='w-full line-clamp-2 leading-none text-sm'>{description}</p>
+                        <time className='absolute bottom-3 left-1/2 -translate-x-1/2 self-center text-xs text-gray-500'>{date.toString()}</time>
+                    </div>
                 </div>
             </div>
         </Link>

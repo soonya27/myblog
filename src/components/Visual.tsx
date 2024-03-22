@@ -1,16 +1,34 @@
-import React from 'react';
-import visulImg from '../../public/images/visual_img.png';
+'use client';
+
+import React, { useState } from 'react';
+import visualImg from '../../public/images/visual_img.png';
+import balloonImg from '../../public/images/balloon.png';
 import Image from 'next/image';
+import Link from 'next/link';
 
 
-
+type Position = {
+    x: number;
+    y: number;
+}
 export default function Visual() {
+    const [position, setPosition] = useState<Position>({ x: 0, y: 0 });
     return (
-        <div className="relative bg-[url('../../public/images/visual_bg.jpg')] md:h-[63vh] lg:h-[95vh] bg-cover bg-center overflow-hidden">
-            <div className='h-full flex justify-center items-center my-5'>
-                <Image src={visulImg} alt="visual image" width={1380} height={900} className='w-2/3 max-w-[900px]' />
+        <div
+            className="relative bg-[url('../../public/images/visual_bg.jpg')] md:h-[63vh] lg:h-[95vh] bg-cover bg-center overflow-hidden pointer-events-none"
+            onPointerMove={(e) => setPosition({ x: e.clientX, y: e.clientY })}
+        >
+            <Link href="/about" className='peer h-full flex justify-center items-center my-5 transition-transform hover:scale-105 cursor-pointer pointer-events-auto'>
+                <Image src={visualImg} alt="visual image" width={1380} height={900} className='w-2/3 max-w-[900px]' />
+            </Link>
+            <div className={`w-28 h-10 fixed left-0 top-0 invisible peer-hover:visible z-10`}
+                style={{ transform: `translate(calc(-50% + ${position.x}px), calc(80% + ${position.y}px))` }}>
+                <div className='relative pointer-events-none'>
+                    <Image src={balloonImg} alt="ballon" />
+                    <p className='absolute top-[68%] -translate-y-1/2 w-28 text-center font-bold text-[#27537b]'>About Me</p>
+                </div>
             </div>
-            <div className=''>
+            <div className='[&>*]:pointer-events-none'>
                 <span className={`${animatedSpanStyle} left-[30%] animate-[bubble_8s_linear_infinite_2.6s] bg-white`}></span>
                 <span className={`${animatedSpanStyle} left-[14%] animate-[bubble_10s_linear_infinite_3.9s] bg-[#fcd1d1]`}></span>
                 <span className={`${animatedSpanStyle} left-[90%] animate-[bubble_10s_linear_infinite_1.5s] bg-[#fcd1d1]`}></span>

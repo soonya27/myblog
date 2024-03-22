@@ -19,7 +19,7 @@ export default function Header() {
             <div className='flex justify-between items-center max-w-screen-2xl mx-auto'>
                 <h1 className='font-bold'>
                     <Link href="/">
-                        <Image src={logoImg} alt="logo" width={100} />
+                        <Image src={logoImg} alt="logo" width={100} height={34} />
                     </Link>
                 </h1>
                 <nav>
