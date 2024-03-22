@@ -8,6 +8,7 @@ export type Post = {
     category: string;
     path: string;
     featured: boolean;
+    stacks: string[];
 }
 
 //기존 Post 객체에 + content 추가
