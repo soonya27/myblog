@@ -2,20 +2,13 @@ import { Post } from '@/service/posts';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import NextJsIcon from './ui/stackIcons/NextJsIcon';
-import ReactIcon from './ui/stackIcons/ReactIcon';
-import SanityIcon from './ui/stackIcons/SanityIcon';
 import CategoryButton from './CategoryButton';
+import StackIconCard from './StackIconCard';
 
 type Props = {
     post: Post
 }
 
-const iconList = [
-    { text: 'NextJs', icon: <NextJsIcon /> },
-    { text: 'React', icon: <ReactIcon /> },
-    { text: 'Sanity', icon: <SanityIcon /> },
-]
 
 // export default function PostCard({ post }: { post: Post }) {
 export default function PostCard({
@@ -39,9 +32,7 @@ export default function PostCard({
                     <ul className='absolute bottom-9 right-3 flex gap-1 justify-end pt-4'>
                         {
                             stacks.map(stack => (
-                                <li className='w-8 h-8'>
-                                    {iconList.find(item => item.text === stack)?.icon}
-                                </li>
+                                <StackIconCard stack={stack} />
                             ))
                         }
                     </ul>

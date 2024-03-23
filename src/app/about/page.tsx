@@ -5,23 +5,24 @@ import tonLogo from '../../../public/images/ton_logodown_src_type_03.png';
 import LinkIcon from '@/components/ui/icons/LinkIcon';
 import DownForwardIcon from '@/components/ui/icons/DownForwardIcon';
 
+import postmanImg from '../../../public/DevelopeSkillIcon/Postman.svg';
 import jsImg from '../../../public/DevelopeSkillIcon/JavaScript.svg';
-import nextImg from '../../../public/DevelopeSkillIcon/NextJS-Dark.svg';
-import reactImg from '../../../public/DevelopeSkillIcon/React-Light.svg';
-import typeScriptImg from '../../../public/DevelopeSkillIcon/TypeScript.svg';
-import firebaseImg from '../../../public/DevelopeSkillIcon/Firebase-Light.svg';
-import tailwindImg from '../../../public/DevelopeSkillIcon/TailwindCSS-Light.svg';
 import jqueryImg from '../../../public/DevelopeSkillIcon/JQuery.svg';
 import bootstrapImg from '../../../public/DevelopeSkillIcon/Bootstrap.svg';
 import htmlImg from '../../../public/DevelopeSkillIcon/HTML.svg';
 import cssImg from '../../../public/DevelopeSkillIcon/CSS.svg';
 import sanityImg from '../../../public/DevelopeSkillIcon/sanity.svg';
-
 import nodeImg from '../../../public/DevelopeSkillIcon/NodeJS.svg';
 import javaImg from '../../../public/DevelopeSkillIcon/Java-Light.svg';
 import mysqlImg from '../../../public/DevelopeSkillIcon/MySQL-Light.svg';
 import figmaImg from '../../../public/DevelopeSkillIcon/Figma.svg';
 import xdImg from '../../../public/DevelopeSkillIcon/XD.svg';
+
+import TypescriptIcon from '@/components/ui/stackIcons/TypescriptIcon';
+import ReactIcon from '@/components/ui/stackIcons/ReactIcon';
+import NextJsIcon from '@/components/ui/stackIcons/NextJsIcon';
+import FirebaseIcon from '@/components/ui/stackIcons/FirebaseIcon';
+import TailwindIcon from '@/components/ui/stackIcons/TailwindIcon';
 
 
 
@@ -67,7 +68,7 @@ export default function AboutPage() {
                             <p>bootstrap</p>
                         </li>
                         <li>
-                            <Image src={tailwindImg} alt="tailwindCss" width={60} height={60} className='w-full ' />
+                            <TailwindIcon />
                             <p>tailwindCss</p>
                         </li>
                         <li>
@@ -75,15 +76,15 @@ export default function AboutPage() {
                             <p>Javascript</p>
                         </li>
                         <li>
-                            <Image src={typeScriptImg} alt="typescript" width={60} height={60} className='w-full ' />
+                            <TypescriptIcon />
                             <p>typescript</p>
                         </li>
                         <li>
-                            <Image src={reactImg} alt="react" width={60} height={60} className='w-full ' />
+                            <ReactIcon />
                             <p>react</p>
                         </li>
                         <li>
-                            <Image src={nextImg} alt="nextJs" width={60} height={60} className='w-full ' />
+                            <NextJsIcon />
                             <p>nextJs</p>
                         </li>
                     </ul>
@@ -91,7 +92,7 @@ export default function AboutPage() {
                     <strong className='block my-2 mt-4'>🖥 back End 🖥</strong>
                     <ul className='grid grid-cols-5 gap-4  lg:grid-cols-5 md:grid-cols-4 [&>li]:flex [&>li]:flex-col [&>li]:items-center px-3'>
                         <li>
-                            <Image src={firebaseImg} alt="firebase" width={60} height={60} className='w-full ' />
+                            <FirebaseIcon />
                             <p>firebase</p>
                         </li>
                         <li>
@@ -111,6 +112,10 @@ export default function AboutPage() {
                         <li>
                             <Image src={figmaImg} alt="figma" width={30} height={30} className='w-full' />
                             <p>figma</p>
+                        </li>
+                        <li>
+                            <Image src={postmanImg} alt="figma" width={30} height={30} className='w-full' />
+                            <p>postman</p>
                         </li>
                     </ul>
 

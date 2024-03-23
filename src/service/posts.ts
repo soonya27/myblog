@@ -12,7 +12,7 @@ export type Post = {
 }
 
 //기존 Post 객체에 + content 추가
-export type PostData = Post & { content: string }
+export type PostData = Post & { content: string, next: Post | null; prev: Post | null }
 
 
 export async function getAllPosts(): Promise<Post[]> {
@@ -42,14 +42,19 @@ export async function getPostDetail(id: string): Promise<PostData> {
     const filePath = path.join(process.cwd(), 'data', `/posts/${id}.md`);
 
     //목록으로부터 -> 제목,설명에 대한 데이터
-    const metadata = await getAllPosts()
-        .then(posts => posts.find(post => post.path === id))
-    if (!metadata) throw new Error(`${id}에 해당하는 파일 없음`)
+    const posts = await getAllPosts();
+    const post = posts.find(post => post.path === id);
+
+    if (!post) throw new Error(`${id}에 해당하는 파일 없음`)
+
+    const index = posts.indexOf(post);
+    const next = index > 0 ? posts[index - 1] : null;
+    const prev = index < posts.length - 1 ? posts[index + 1] : null;
 
     //detail 내용파일
     const content = await readFile(filePath, 'utf-8');
 
-    return { ...metadata, content };
+    return { ...post, content, next, prev };
 }
 
 
