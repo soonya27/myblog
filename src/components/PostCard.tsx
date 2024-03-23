@@ -5,6 +5,7 @@ import React from 'react';
 import NextJsIcon from './ui/stackIcons/NextJsIcon';
 import ReactIcon from './ui/stackIcons/ReactIcon';
 import SanityIcon from './ui/stackIcons/SanityIcon';
+import CategoryButton from './CategoryButton';
 
 type Props = {
     post: Post
@@ -23,9 +24,9 @@ export default function PostCard({
     return (
         <Link href={`/posts/${path}`}>
             <div className='relative rounded-2xl overflow-hidden border hover:shadow-xl transition-transform hover:-translate-y-1 duration-200'>
-                <span className='absolute left-3 top-3 text-xs rounded-3xl py-[0.2rem] px-[.7rem] leading-1 bg-[#fcd1d1] text-[#db5f5f] font-semibold'>
-                    {category}
-                </span>
+                <div className='absolute left-3 top-3'>
+                    <CategoryButton text={category} />
+                </div>
                 <Image src={`/images/posts/${path}.png`} alt={title}
                     width={300} height={200}
                     className='w-full h-52 md:h-40 object-cover' />
