@@ -23,6 +23,7 @@ import ReactIcon from '@/components/ui/stackIcons/ReactIcon';
 import NextJsIcon from '@/components/ui/stackIcons/NextJsIcon';
 import FirebaseIcon from '@/components/ui/stackIcons/FirebaseIcon';
 import TailwindIcon from '@/components/ui/stackIcons/TailwindIcon';
+import { AiFillGithub } from 'react-icons/ai';
 
 
 
@@ -43,7 +44,7 @@ export default function AboutPage() {
                     <strong>github</strong>
                     <p className='flex items-center justify-center'><a target="_blank" href="https://github.com/soonya27" rel="noopener noreferrer"
                         className='flex items-center ml-2 text-[#258ddb] text-sm'>
-                        <LinkIcon /><span className='ml-2'>https://github.com/soonya27</span></a></p>
+                        <AiFillGithub /><span className='ml-2'>https://github.com/soonya27</span></a></p>
                     <strong>CONTACT</strong>
                     <p>010.2770.4952</p>
                 </div>

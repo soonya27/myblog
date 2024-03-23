@@ -32,7 +32,7 @@ export default function PostCard({
                     <ul className='absolute bottom-9 right-3 flex gap-1 justify-end pt-4'>
                         {
                             stacks.map(stack => (
-                                <StackIconCard stack={stack} />
+                                <StackIconCard stack={stack} key={stack} />
                             ))
                         }
                     </ul>

@@ -20,7 +20,7 @@ export default function PostContent({ post, id }: { post: PostData, id: string }
                     <ul className='flex gap-2 justify-center mt-7' >
                         {
                             stacks.map(stack => (
-                                <StackIconCard stack={stack} />
+                                <StackIconCard stack={stack} key={stack} />
                             ))
                         }
                     </ul>

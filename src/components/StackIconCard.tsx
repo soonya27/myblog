@@ -14,7 +14,7 @@ const iconList = [
 
 export default function StackIconCard({ stack }: { stack: string }) {
     return (
-        <li className='w-8 h-8' key={stack}>
+        <li className='w-8 h-8'>
             {iconList.find(item => item.text === stack)?.icon}
         </li>
     );
