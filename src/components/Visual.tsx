@@ -30,19 +30,19 @@ export default function Visual() {
             </div>
             <div className='[&>*]:pointer-events-none'>
                 <span className={`${animatedSpanStyle} left-[30%] animate-[bubble_8s_linear_infinite_2.6s] bg-white`}></span>
-                <span className={`${animatedSpanStyle} left-[14%] animate-[bubble_10s_linear_infinite_3.9s] bg-[#fcd1d1]`}></span>
-                <span className={`${animatedSpanStyle} left-[90%] animate-[bubble_10s_linear_infinite_1.5s] bg-[#fcd1d1]`}></span>
-                <span className={`${animatedSpanStyle} left-[70%] animate-[bubble_6s_linear_infinite_1.s] bg-[#fcd1d1]`}></span>
-                <span className={`${animatedSpanStyle} left-[20%] animate-[bubble_8s_linear_infinite_0.5s] bg-[#fcd1d1]`}></span>
+                <span className={`${animatedSpanStyle} left-[14%] animate-[bubble_10s_linear_infinite_3.9s] bg-main-pink`}></span>
+                <span className={`${animatedSpanStyle} left-[90%] animate-[bubble_10s_linear_infinite_1.5s] bg-main-pink`}></span>
+                <span className={`${animatedSpanStyle} left-[70%] animate-[bubble_6s_linear_infinite_1.s] bg-main-pink`}></span>
+                <span className={`${animatedSpanStyle} left-[20%] animate-[bubble_8s_linear_infinite_0.5s] bg-main-pink`}></span>
                 <span className={`${animatedSpanStyle} left-[80%] animate-[bubble_10s_linear_infinite_1.8s] bg-white`}></span>
                 <span className={`${animatedSpanStyle} left-[1%] animate-[bubble_10s_linear_infinite_5.2s] bg-white`}></span>
                 <span className={`${animatedSpanStyle} left-[50%] animate-[bubble_10s_linear_infinite_3.1s] bg-white`}></span>
-                <span className={`${animatedSpanStyle} left-[65%] animate-[bubble_10s_linear_infinite_4.5s] bg-[#fcd1d1]`}></span>
+                <span className={`${animatedSpanStyle} left-[65%] animate-[bubble_10s_linear_infinite_4.5s] bg-main-pink`}></span>
                 <span className={`${animatedSpanStyle} left-[76%] animate-[bubble_8s_linear_infinite_2.6s] bg-white`}></span>
-                <span className={`${animatedSpanStyle} left-[88%] animate-[bubble_10s_linear_infinite_3.9s] bg-[#fcd1d1]`}></span>
+                <span className={`${animatedSpanStyle} left-[88%] animate-[bubble_10s_linear_infinite_3.9s] bg-main-pink`}></span>
                 <span className={`${animatedSpanStyle} left-[35%] animate-[bubble_10s_linear_infinite_1.5s] bg-bg-white`}></span>
-                <span className={`${animatedSpanStyle} left-[5%] animate-[bubble_6s_linear_infinite_1.s] bg-[#fcd1d1]`}></span>
-                <span className={`${animatedSpanStyle} left-[10%] animate-[bubble_8s_linear_infinite_0.5s] bg-[#fcd1d1]`}></span>
+                <span className={`${animatedSpanStyle} left-[5%] animate-[bubble_6s_linear_infinite_1.s] bg-main-pink`}></span>
+                <span className={`${animatedSpanStyle} left-[10%] animate-[bubble_8s_linear_infinite_0.5s] bg-main-pink`}></span>
             </div>
         </div>
     );

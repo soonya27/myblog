@@ -13,6 +13,11 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      colors: {
+        'main-pink': '#fcd1d1',
+        'main-blue': '#a3c7e1',
+        'main-darkblue': '#284e74',
+      },
       keyframes: {
         bubble: {
           '0%': { bottom: '0%', marginLeft: '2.5rem', marginRight: '0px' },

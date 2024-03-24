@@ -15,7 +15,7 @@ const ICON_CLASS = 'absolute text-[9vw] sm:text-[4vw] lg:text-6xl p-2 transition
 export default function NavigatorPostButton({ post: { path, title, description }, type, isOne }: Props) {
     console.log(isOne)
     return (
-        <Link href={`/posts/${path}`} className='group relative w-full bg-black max-h-44 text-' >
+        <Link href={`/posts/detail/${path}`} className='group relative w-full bg-black max-h-44 text-' >
             <Image src={`/images/posts/${path}.png`}
                 className='w-full h-full opacity-40 '
                 alt={title}

@@ -33,7 +33,7 @@ export default function ContactForm() {
             <label htmlFor="message">Message</label>
             <textarea rows={10} name="message" id="message" required value={formData.message} onChange={onChange}
                 className={inputStyle} />
-            <button className='w-full bg-[#a3c7e1] h-9'>submit</button>
+            <button className='w-full bg-main-blue h-9'>submit</button>
         </form>
     );
 }

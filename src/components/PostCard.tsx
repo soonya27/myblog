@@ -15,7 +15,7 @@ export default function PostCard({
     post: { title, date, category, path, description, stacks }
 }: Props) {
     return (
-        <Link href={`/posts/${path}`}>
+        <Link href={`/posts/detail/${path}`}>
             <div className='relative rounded-2xl overflow-hidden border hover:shadow-xl transition-transform hover:-translate-y-1 duration-200'>
                 <div className='absolute left-3 top-3'>
                     <CategoryButton text={category} />

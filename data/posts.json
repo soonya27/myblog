@@ -3,7 +3,7 @@
     "title": "nextJs_instagramClone",
     "description": "인스타그램 클론 코딩 웹 어플리케이션 (nextjs , sanity)",
     "date": "2024-03-21",
-    "category": "project",
+    "category": "Project",
     "path": "instagram-clone",
     "featured": true,
     "stacks": [
@@ -17,7 +17,7 @@
     "title": "2021년 리뷰",
     "description": "2021년 한해 동안 배운 기술들, 생각들 정리",
     "date": "2021-12-31",
-    "category": "my story",
+    "category": "Javascript",
     "path": "review-2021",
     "featured": false,
     "stacks": [
@@ -30,7 +30,7 @@
     "title": "2021년 리뷰",
     "description": "2021년 한해 동안 배운 기술들, 생각들 정리",
     "date": "2021-12-31",
-    "category": "my story",
+    "category": "Javascript",
     "path": "best-react-practices",
     "featured": false,
     "stacks": [

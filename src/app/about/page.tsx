@@ -31,10 +31,10 @@ import { AiFillGithub } from 'react-icons/ai';
 export default function AboutPage() {
     return (
         <section className='flex flex-col md:flex-row max-w-screen-2xl mx-auto'>
-            <div className='lg:w-2/6 bg-[#fcd1d1] text-center py-10 [&>p]:mb-4'>
+            <div className='lg:w-2/6 bg-main-pink text-center py-10 [&>p]:mb-4'>
                 <Profile />
                 <div className='px-3'>
-                    <h2 className='text-3xl text-[#284e74] border-b-4 font-bold border-[#284e74] my-4 pb-2'>Profile</h2>
+                    <h2 className='text-3xl text-main-darkblue border-b-4 font-bold border-main-darkblue my-4 pb-2'>Profile</h2>
                     <strong>NAME</strong>
                     <p>편소영 (Pyeon So Yeong)</p>
                     <strong>AGE</strong>
@@ -49,7 +49,7 @@ export default function AboutPage() {
                     <p>010.2770.4952</p>
                 </div>
                 <div className='px-3 py-3 [&>ul>li>p]:text-sm [&>ul>li>p]:font-semibold [&>ul>li>p]:mt-1'>
-                    <h2 className='text-3xl text-[#284e74] border-b-4 font-bold border-[#284e74] my-4 pb-2'>Skills</h2>
+                    <h2 className='text-3xl text-main-darkblue border-b-4 font-bold border-main-darkblue my-4 pb-2'>Skills</h2>
                     <strong className='block mb-3'>💻 Front End 💻</strong>
                     <ul className='grid grid-cols-5 gap-4  lg:grid-cols-5 md:grid-cols-4 [&>li]:flex [&>li]:flex-col [&>li]:items-center px-3'>
                         <li>
@@ -140,15 +140,15 @@ export default function AboutPage() {
             </div>
             <div className='lg:w-4/6 p-7 md:p-12 text-base'>
                 <dl>
-                    <dt className='text-2xl text-[#284e74] border-b-4 font-bold border-[#284e74] mb-4'>Education</dt>
-                    <dd className={`${ddStyle}`}><span className='text-[#284e74] font-bold mr-3'>2019</span>
+                    <dt className='text-2xl text-main-darkblue border-b-4 font-bold border-main-darkblue mb-4'>Education</dt>
+                    <dd className={`${ddStyle}`}><span className='text-main-darkblue font-bold mr-3'>2019</span>
                         <p>세종대학교 회화과(서양화과) 졸업</p>
                     </dd>
-                    <dt className='text-2xl text-[#284e74] border-b-4 font-bold border-[#284e74] mb-4 mt-5'>Career</dt>
-                    <dd className={`${ddStyle}`}><span className='text-[#284e74] font-bold mr-3'>2019</span>
+                    <dt className='text-2xl text-main-darkblue border-b-4 font-bold border-main-darkblue mb-4 mt-5'>Career</dt>
+                    <dd className={`${ddStyle}`}><span className='text-main-darkblue font-bold mr-3'>2019</span>
                         <p>광진구 공공근로 벽화사업</p>
                     </dd>
-                    {/* <dd><span className='text-[#284e74] font-bold'>2020</span>
+                    {/* <dd><span className='text-main-darkblue font-bold'>2020</span>
                         <p>개인 포트폴리오</p>
                         <p className="">
                             <span className="link">
@@ -160,7 +160,7 @@ export default function AboutPage() {
                         </p>
                     </dd> */}
                     <dd className={`${ddStyle}`}>
-                        <span className='text-[#284e74] font-bold mr-3'>2021<br />~<br /> 2023</span>
+                        <span className='text-main-darkblue font-bold mr-3'>2021<br />~<br /> 2023</span>
                         <div className="flex-auto">
                             <div className='flex justify-center items-center flex-col md:flex-row mb-5 pb-5 border-b'>
                                 <div className='w-40 h-40 rounded-full overflow-hidden border flex justify-center items-center p-5 mt-2 mb-2'>

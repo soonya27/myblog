@@ -1,3 +1,4 @@
+import { Category } from '@/model/category';
 import { readFile } from 'fs/promises';
 import path from 'path';
 
@@ -5,7 +6,7 @@ export type Post = {
     title: string;
     description: string;
     date: Date;
-    category: string;
+    category: Category;
     path: string;
     featured: boolean;
     stacks: string[];
