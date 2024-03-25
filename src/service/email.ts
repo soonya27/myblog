@@ -1,0 +1,42 @@
+import nodemailer from 'nodemailer';
+import fs from 'fs';
+
+export type EmailData = {
+    from: string;
+    subject: string;
+    message: string;
+}
+
+
+const transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
+    auth: {
+        user: process.env.AUTH_USER,
+        pass: process.env.AUTH_PASS
+    },
+});
+
+export async function sendEmail({ subject, from, message }: EmailData) {
+    const mailData = {
+        to: process.env.AUTH_USER,
+        subject: `[PyeonBlog]로부터 발송된 메일.. 제목:${subject}`,
+        from,
+        html: `
+            <img src="cid:profile" />
+            <h1>${subject}</h1>
+            <div>${message}</div>
+            <br/>
+            <p>from : ${from}</p>
+        `,
+        attachments: [
+            {
+                filename: "sub_bg.jpg",
+                path: "public/images/profile_imge.jpg",
+                cid: "profile"
+            }
+        ]
+    }
+    return transporter.sendMail(mailData);
+}

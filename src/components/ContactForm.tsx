@@ -1,26 +1,37 @@
 'use client';
+import { EmailData } from '@/service/email';
+import { sendContactEmail } from '@/service/contact';
 import React, { ChangeEvent, FormEvent, useState } from 'react';
 
-type Form = {
-    from: string;
-    subject: string;
-    message: string;
+const DEFAULT_DATA = {
+    from: '',
+    subject: '',
+    message: '',
 }
 const inputStyle = `bg-[#f5f4fa] p-3 outline-none`
 
 export default function ContactForm() {
-    const [formData, setFormData] = useState<Form>({
-        from: '',
-        subject: '',
-        message: ''
-    });
+    const [formData, setFormData] = useState<EmailData>(DEFAULT_DATA);
     const onChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }))
     }
     const onSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log(formData)
+
+        sendContactEmail(formData)
+            .then((data) => {
+                //메일 성공
+                console.log(data)
+                setFormData(DEFAULT_DATA);
+            }).catch((e) => {
+                //에러
+                console.log(e)
+            }).finally(() => {
+                setTimeout(() => {
+                    //베너나 팝업 삭제
+                }, 3000)
+            })
     }
     return (
         <form onSubmit={onSubmit} className='w-full flex flex-col gap-2'>

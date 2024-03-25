@@ -13,7 +13,6 @@ type Props = {
 
 const ICON_CLASS = 'absolute text-[9vw] sm:text-[4vw] lg:text-6xl p-2 transition-all text-yellow-300 basis-[12%] group-hover:scale-125';
 export default function NavigatorPostButton({ post: { path, title, description }, type, isOne }: Props) {
-    console.log(isOne)
     return (
         <Link href={`/posts/detail/${path}`} className='group relative w-full bg-black max-h-44 text-' >
             <Image src={`/images/posts/${path}.png`}
