@@ -9,9 +9,9 @@ export default function MarkdownViewer({ content }: { content: string }) {
     return (
         <Markdown className='prose lg:prose-xl max-w-none' remarkPlugins={[remarkGfm]}
             components={{
-                code({ node, inline, className, children, ...props }) {
+                code({ node, className, children, ...props }) {
                     const match = /language-(\w+)/.exec(className || "");
-                    return !inline && match ? (
+                    return match ? (
                         <SyntaxHighlighter
                             language={match[1]}
                             style={vscDarkPlus}

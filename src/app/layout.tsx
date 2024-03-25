@@ -50,6 +50,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <div id="portal" />
       </body>
     </html>
   );

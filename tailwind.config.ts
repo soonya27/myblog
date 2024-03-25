@@ -17,6 +17,8 @@ const config: Config = {
         'main-pink': '#fcd1d1',
         'main-blue': '#a3c7e1',
         'main-darkblue': '#284e74',
+        'success': '#5ecea8',
+        'fail': '#eb5252',
       },
       keyframes: {
         bubble: {

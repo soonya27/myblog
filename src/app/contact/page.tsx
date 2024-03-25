@@ -6,9 +6,9 @@ export default function ContactPage() {
     return (
         <section className='bg-[url("../../public/images/sub_bg.jpg")] bg-cover bg-center min-h-[calc(100vh-60px)] '>
             <div className='w-full min-h-[calc(100vh-60px)] flex flex-col items-center py-28 bg-gray-700/60'>
-                <div className='relative bg-white rounded-lg w-4/5 max-w-lg p-7 py-6 shadow-lg'>
+                <div className='relative bg-white rounded-lg w-[calc(calc(100%-48px)*0.75)] max-w-lg p-7 py-6 shadow-lg'>
                     <h2 className='text-4xl font-extrabold text-center text-main-darkblue'>Contact Me</h2>
-                    <div className='text-center mt-3'>
+                    <div className='text-center mt-3 break-words'>
                         <p className='leading-none text-gray-800'><span className='text-sm text-main-darkblue mr-2'>email</span>psykor48@gmail.com</p>
                         <p className='leading-none text-gray-800'><span className='text-sm text-main-darkblue mr-2'>call</span>010.2770.4952</p>
                     </div>

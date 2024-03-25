@@ -22,5 +22,5 @@ html {
 
 body {
   height: 100vh;
-
+  /* word-break: break-all; */
 }

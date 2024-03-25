@@ -31,7 +31,7 @@ import { AiFillGithub } from 'react-icons/ai';
 export default function AboutPage() {
     return (
         <section className='flex flex-col md:flex-row max-w-screen-2xl mx-auto'>
-            <div className='lg:w-2/6 bg-main-pink text-center py-10 [&>p]:mb-4'>
+            <div className='w-full md:w-[45%] bg-main-pink text-center py-10 [&>p]:mb-4'>
                 <Profile />
                 <div className='px-3'>
                     <h2 className='text-3xl text-main-darkblue border-b-4 font-bold border-main-darkblue my-4 pb-2'>Profile</h2>
