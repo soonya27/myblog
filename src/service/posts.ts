@@ -33,7 +33,6 @@ export async function getNonFeaturedPosts(): Promise<Post[]> {
         .then(posts => posts.filter(post => !post.featured))
 }
 
-
 export async function getFilteredPosts(filter?: string | null): Promise<Post[]> {
     return getAllPosts()
         .then(posts => filter ? posts.filter(post => post.category === filter) : posts)

@@ -4,10 +4,14 @@ import remarkGfm from 'remark-gfm';
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import Image from 'next/image';
+import LinkIcon from './ui/icons/LinkIcon';
+
+
+
 
 export default function MarkdownViewer({ content }: { content: string }) {
     return (
-        <Markdown className='prose lg:prose-xl max-w-none' remarkPlugins={[remarkGfm]}
+        <Markdown className='prose max-w-none' remarkPlugins={[remarkGfm]}
             components={{
                 code({ node, className, children, ...props }) {
                     const match = /language-(\w+)/.exec(className || "");
@@ -15,6 +19,7 @@ export default function MarkdownViewer({ content }: { content: string }) {
                         <SyntaxHighlighter
                             language={match[1]}
                             style={vscDarkPlus}
+                            className="syntaxhighlighter"
                         >
                             {String(children).replace(/\n$/, "")}
                         </SyntaxHighlighter>
@@ -23,7 +28,10 @@ export default function MarkdownViewer({ content }: { content: string }) {
                     );
                 },
                 img: (image) => <Image className='w-full max-h-60 object-cover'
-                    src={image.src || ''} alt={image.alt || ''} width={500} height={350} />
+                    src={image.src || ''} alt={image.alt || ''} width={500} height={350} />,
+                a: (props) => <a href={props.href} target='_blank' className='flex items-center w-fit text-main-blue hover:text-main-darkblue transition-all'>
+                    <LinkIcon />
+                    <span className='ml-1'>{props.children}</span></a>
             }}
         >
             {content}

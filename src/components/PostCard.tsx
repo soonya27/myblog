@@ -31,7 +31,7 @@ export default function PostCard({
             </div>
             <Link href={`/posts/detail/${path}`} className=''>
                 <Image src={`/images/posts/${path}.png`} alt={title}
-                    width={300} height={200}
+                    width={600} height={400}
                     className='w-full h-52 md:h-40 object-cover' />
                 <div className='p-4 h-[9rem]'>
                     <div className='flex flex-col'>

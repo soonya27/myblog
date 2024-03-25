@@ -14,29 +14,16 @@
     ]
   },
   {
-    "title": "2021년 리뷰",
-    "description": "2021년 한해 동안 배운 기술들, 생각들 정리",
-    "date": "2021-12-31",
-    "category": "Javascript",
-    "path": "review-2021",
-    "featured": false,
+    "title": "myblog_portfolio",
+    "description": "포트폴리오 사이트 (nextjs)",
+    "date": "2024-03-25",
+    "category": "Project",
+    "path": "myblog_portfolio",
+    "featured": true,
     "stacks": [
       "React",
       "NextJs",
-      "Sanity"
-    ]
-  },
-  {
-    "title": "2021년 리뷰",
-    "description": "2021년 한해 동안 배운 기술들, 생각들 정리",
-    "date": "2021-12-31",
-    "category": "Javascript",
-    "path": "best-react-practices",
-    "featured": false,
-    "stacks": [
-      "React",
-      "NextJs",
-      "Sanity"
+      "typescript"
     ]
   }
 ]

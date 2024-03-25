@@ -1,12 +1,10 @@
 import nodemailer from 'nodemailer';
-import fs from 'fs';
 
 export type EmailData = {
     from: string;
     subject: string;
     message: string;
 }
-
 
 const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
@@ -25,10 +23,10 @@ export async function sendEmail({ subject, from, message }: EmailData) {
         from,
         html: `
             <img src="cid:profile" />
-            <h1>${subject}</h1>
-            <div>${message}</div>
+            <h1>제목 : ${subject}</h1>
+            <div>내용 : ${message}</div>
             <br/>
-            <p>from : ${from}</p>
+            <p>보낸사람 : ${from}</p>
         `,
         attachments: [
             {

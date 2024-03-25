@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Pretendard Regular';
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: swap;
+  src: local('Pretendard Regular'), url('../fonts/Pretendard-Regular.woff2') format('woff2-variations');
+}
+
+@font-face {
+  font-family: "Fira Code", monospace;
+  font-weight: 400;
+  font-style: normal;
+  src: local('Fira Code Regular'), url('../fonts/FIRACODE-MEDIUM.TTF') format("truetype");
+}
+
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -23,4 +39,29 @@ html {
 body {
   height: 100vh;
   /* word-break: break-all; */
+}
+
+body::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: rgb(212 212 212);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  --tw-bg-opacity: 1;
+  background: #ff9090;
+}
+
+body .syntaxhighlighter code,
+body .syntaxhighlighter .gutter {
+  font-size: 0.85rem !important;
+  font-family: 'Fira Code' !important;
 }
