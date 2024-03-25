@@ -1,7 +1,6 @@
 import React from 'react';
 import CategoryButton from './CategoryButton';
 import { Category } from '@/model/category';
-import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
 
@@ -10,7 +9,6 @@ type Props = {
     selected: string;
 }
 export default function PostsNavbar({ categories, selected }: Props) {
-    const router = useRouter();
     return (
         <div className='pl-3 pt-3'>
             {/* <h3 className='py-2 pb-1 text-center font-bold'>Category</h3> */}

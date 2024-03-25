@@ -1,3 +1,4 @@
+'use client'
 import { Post } from '@/service/posts';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -9,17 +10,26 @@ type Props = {
     post: Post
 }
 
-
 // export default function PostCard({ post }: { post: Post }) {
 export default function PostCard({
     post: { title, date, category, path, description, stacks }
 }: Props) {
+
+    //하이드레이션 이슈
+    //(Hydration failed because the initial UI does not match what was rendered on the server.)
+    // const [isClient, setIsClient] = useState(false);
+    // useEffect(() => {
+    //     setIsClient(true)
+    // }, []);
+
     return (
-        <Link href={`/posts/detail/${path}`}>
-            <div className='relative rounded-2xl overflow-hidden border hover:shadow-xl transition-transform hover:-translate-y-1 duration-200'>
-                <div className='absolute left-3 top-3'>
+        <div className='block relative rounded-2xl overflow-hidden border hover:shadow-xl transition-transform hover:-translate-y-1 duration-200'>
+            <div className='absolute left-3 top-3 z-10'>
+                <Link href={`/posts/${category}`} className='inline-block h-full'>
                     <CategoryButton text={category} />
-                </div>
+                </Link>
+            </div>
+            <Link href={`/posts/detail/${path}`} className=''>
                 <Image src={`/images/posts/${path}.png`} alt={title}
                     width={300} height={200}
                     className='w-full h-52 md:h-40 object-cover' />
@@ -37,8 +47,8 @@ export default function PostCard({
                         }
                     </ul>
                 </div>
-            </div>
-        </Link>
+            </Link>
+        </div >
     );
 }
 

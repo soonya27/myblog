@@ -31,9 +31,9 @@ import { AiFillGithub } from 'react-icons/ai';
 export default function AboutPage() {
     return (
         <section className='flex flex-col md:flex-row max-w-screen-2xl mx-auto'>
-            <div className='w-full md:w-[45%] bg-main-pink text-center py-10 [&>p]:mb-4'>
+            <div className='w-full md:w-[38%] bg-main-pink text-center py-10 [&>p]:mb-4'>
                 <Profile />
-                <div className='px-3'>
+                <div className='px-3 [&>p]:leading-tight [&>p]:text-lg [&>p]:mb-2'>
                     <h2 className='text-3xl text-main-darkblue border-b-4 font-bold border-main-darkblue my-4 pb-2'>Profile</h2>
                     <strong>NAME</strong>
                     <p>편소영 (Pyeon So Yeong)</p>
@@ -43,15 +43,15 @@ export default function AboutPage() {
                     <p>psykor48@gmail.com</p>
                     <strong>github</strong>
                     <p className='flex items-center justify-center'><a target="_blank" href="https://github.com/soonya27" rel="noopener noreferrer"
-                        className='flex items-center ml-2 text-[#258ddb] text-sm'>
-                        <AiFillGithub /><span className='ml-2'>https://github.com/soonya27</span></a></p>
+                        className='flex items-center ml-2 text-[#258ddb] text-lg'>
+                        <AiFillGithub /><span className='ml-2 text-lg'>https://github.com/soonya27</span></a></p>
                     <strong>CONTACT</strong>
                     <p>010.2770.4952</p>
                 </div>
                 <div className='px-3 py-3 [&>ul>li>p]:text-sm [&>ul>li>p]:font-semibold [&>ul>li>p]:mt-1'>
                     <h2 className='text-3xl text-main-darkblue border-b-4 font-bold border-main-darkblue my-4 pb-2'>Skills</h2>
                     <strong className='block mb-3'>💻 Front End 💻</strong>
-                    <ul className='grid grid-cols-5 gap-4  lg:grid-cols-5 md:grid-cols-4 [&>li]:flex [&>li]:flex-col [&>li]:items-center px-3'>
+                    <ul className='grid grid-cols-5 gap-5 lg:grid-cols-5 md:grid-cols-4 [&>li]:flex [&>li]:flex-col [&>li]:items-center px-6'>
                         <li>
                             <Image src={htmlImg} alt="html" width={60} height={60} className='w-full ' />
                             <p>html</p>
@@ -91,7 +91,7 @@ export default function AboutPage() {
                     </ul>
 
                     <strong className='block my-2 mt-4'>🖥 back End 🖥</strong>
-                    <ul className='grid grid-cols-5 gap-4  lg:grid-cols-5 md:grid-cols-4 [&>li]:flex [&>li]:flex-col [&>li]:items-center px-3'>
+                    <ul className='grid grid-cols-5 gap-5  lg:grid-cols-5 md:grid-cols-4 [&>li]:flex [&>li]:flex-col [&>li]:items-center px-6'>
                         <li>
                             <FirebaseIcon />
                             <p>firebase</p>
@@ -105,7 +105,7 @@ export default function AboutPage() {
                     </ul>
 
                     <strong className='block my-2 mt-4'>🍂 Communication 🍂</strong>
-                    <ul className='grid grid-cols-5 gap-4  lg:grid-cols-5 md:grid-cols-4 [&>li]:flex [&>li]:flex-col [&>li]:items-center px-3'>
+                    <ul className='grid grid-cols-5 gap-5  lg:grid-cols-5 md:grid-cols-4 [&>li]:flex [&>li]:flex-col [&>li]:items-center px-6'>
                         <li>
                             <Image src={xdImg} alt="xd" width={60} height={60} className='w-full ' />
                             <p>xd</p>
@@ -121,7 +121,7 @@ export default function AboutPage() {
                     </ul>
 
                     <strong className='block my-2 mt-4'>📚 Studying.. 📚</strong>
-                    <ul className='grid grid-cols-5 gap-4  lg:grid-cols-5 md:grid-cols-4 [&>li]:flex [&>li]:flex-col [&>li]:items-center px-3'>
+                    <ul className='grid grid-cols-5 gap-5  lg:grid-cols-5 md:grid-cols-4 [&>li]:flex [&>li]:flex-col [&>li]:items-center px-6'>
                         <li>
                             <Image src={nodeImg} alt="xd" width={60} height={60} className='w-full ' />
                             <p>node.js</p>

@@ -28,13 +28,6 @@ export default function ContactForm() {
         title: '', icon: <div></div>, detail: <div></div>, state: 'success'
     });
 
-    //하이드레이션 이슈
-    // (server HTML to contain a matching)
-    const [isClient, setIsClient] = useState(false);
-    useEffect(() => {
-        setIsClient(true)
-    }, []);
-
 
     // const handleClick = () => setOpenModal(true);
     const onClose = () => {

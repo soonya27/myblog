@@ -1,10 +1,9 @@
 "use client"
 import { Post } from '@/service/posts';
-import React, { useState } from 'react';
+import React from 'react';
 import PostsGrid from './PostsGrid';
 import PostsNavbar from './PostsNavbar';
 import { Category } from '@/model/category';
-import { redirect, usePathname } from 'next/navigation';
 
 type Props = {
     posts: Post[];

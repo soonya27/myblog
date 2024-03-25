@@ -5,6 +5,7 @@ import CategoryButton from './CategoryButton';
 import { AiTwotoneCalendar } from 'react-icons/ai';
 import MarkdownViewer from './MarkdownViewer';
 import StackIconCard from './StackIconCard';
+import Link from 'next/link';
 
 export default function PostContent({ post, id }: { post: PostData, id: string }) {
     const { title, content, date, path, description, category, stacks } = post;
@@ -14,7 +15,9 @@ export default function PostContent({ post, id }: { post: PostData, id: string }
                 <Image src={`/images/posts/${id}.png`} width={760} height={420} alt={title}
                     className='w-full  max-h-[60vh] object-cover' />
                 <div className='absolute top-0 left-1/2 -translate-x-1/2 flex flex-col items-center justify-center w-full h-full max-w-screen-2xl text-white px-3'>
-                    <CategoryButton text={category} />
+                    <Link href={`/posts/${category}`} className='inline-block'>
+                        <CategoryButton text={category} />
+                    </Link>
                     <h1 className='text-[7vw] md:text-6xl font-bold mt-5 break-all leading-none'>{title}</h1>
                     <p className='text-[3.5vw] md:text-2xl mt-[1vw] md:mt-2'>{description}</p>
                     <ul className='flex gap-2 justify-center mt-7' >
@@ -30,7 +33,7 @@ export default function PostContent({ post, id }: { post: PostData, id: string }
                     </div>
                 </div>
             </div>
-            <section className='flex flex-col p-4  max-w-screen-2xl mx-auto'>
+            <section className='flex flex-col p-6 px-8 max-w-screen-2xl mx-auto '>
                 <MarkdownViewer content={content} />
             </section>
         </>
