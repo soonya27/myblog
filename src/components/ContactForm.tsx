@@ -81,7 +81,7 @@ export default function ContactForm() {
                     className={inputStyle} />
                 <label htmlFor="message">Message</label>
                 <textarea rows={10} name="message" id="message" required value={formData.message} onChange={onChange}
-                    className={inputStyle} />
+                    className={`${inputStyle} resize-none`} />
                 <button className='w-full mt-3 bg-main-blue h-9 text-white text-bold hover:bg-main-darkblue transition-all'>submit</button>
             </form>
             {openModal && (

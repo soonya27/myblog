@@ -16,10 +16,10 @@ export default function NavigatorPostButton({ post: { path, title, description }
     return (
         <Link href={`/posts/detail/${path}`} className='group relative w-full bg-black max-h-44' >
             <Image src={`/images/posts/${path}.png`}
-                className='w-full h-full opacity-40 '
+                className='w-full h-full opacity-40 object-cover'
                 alt={title}
-                width={150}
-                height={100} />
+                width={600}
+                height={300} />
             <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full flex justify-around items-center text-white px-[2vw]'>
                 {type == 'prev' && <FaArrowLeft className={`${ICON_CLASS} left-2`} />}
                 <div className={`w-full text-center 

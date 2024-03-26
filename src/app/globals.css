@@ -41,16 +41,16 @@ body {
   /* word-break: break-all; */
 }
 
-body::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 7px;
   height: 7px;
 }
 
-body::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
   background: transparent;
 }
 
-body::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background: rgb(212 212 212);
   border-radius: 10px;
 }

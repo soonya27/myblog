@@ -27,11 +27,13 @@ export default function MarkdownViewer({ content }: { content: string }) {
                         <code {...props}>{children}</code>
                     );
                 },
-                img: (image) => <Image className='w-full max-h-60 object-cover'
+                img: (image) => <Image className='h-full w-auto mx-auto'
                     src={image.src || ''} alt={image.alt || ''} width={500} height={350} />,
                 a: (props) => <a href={props.href} target='_blank' className='flex items-center w-fit text-main-blue hover:text-main-darkblue transition-all'>
                     <LinkIcon />
-                    <span className='ml-1'>{props.children}</span></a>
+                    <span className='ml-1'>{props.children}</span></a>,
+                p: (text) => <p className='my-1 leading-normal'>{text.children}</p>,
+                br: (text) => <br />
             }}
         >
             {content}

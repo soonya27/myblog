@@ -1,6 +1,6 @@
 [
   {
-    "title": "nextJs_instagramClone",
+    "title": "nextJs instagramClone",
     "description": "인스타그램 클론 코딩 웹 어플리케이션 (nextjs , sanity)",
     "date": "2024-03-21",
     "category": "Project",
@@ -9,12 +9,12 @@
     "stacks": [
       "React",
       "NextJs",
-      "typescript",
+      "Typescript",
       "Sanity"
     ]
   },
   {
-    "title": "myblog_portfolio",
+    "title": "myblog portfolio",
     "description": "포트폴리오 사이트 (nextjs)",
     "date": "2024-03-25",
     "category": "Project",
@@ -23,7 +23,55 @@
     "stacks": [
       "React",
       "NextJs",
-      "typescript"
+      "Typescript"
+    ]
+  },
+  {
+    "title": "modal Js",
+    "description": "Javascript class를 이용한 Modal 생성 module 제작",
+    "date": "2023-05-25",
+    "category": "Javascript",
+    "path": "modalJs",
+    "featured": false,
+    "stacks": [
+      "Javascript"
+    ]
+  },
+  {
+    "title": "cardGame shuffle",
+    "description": "Javascript class를 이용해 Card를 섞고, 뽑고, 나열하는 기능을 구현",
+    "date": "2023-11-22",
+    "category": "Javascript",
+    "path": "cardGame_shuffle",
+    "featured": false,
+    "stacks": [
+      "Javascript"
+    ]
+  },
+  {
+    "title": "web publishing porfolio01",
+    "description": "GS E&R 페이지를 리뉴얼 하여 퍼블리싱한 웹사이트 포트폴리오(2020)",
+    "date": "2020-10-01",
+    "category": "Project",
+    "path": "web-publishing-porfolio01",
+    "featured": false,
+    "stacks": [
+      "Html",
+      "Css",
+      "Javascript"
+    ]
+  },
+  {
+    "title": "web publishing porfolio02",
+    "description": "서울아산병원 페이지를 리뉴얼 하여 퍼블리싱한 웹사이트 포트폴리오(2020)",
+    "date": "2020-11-23",
+    "category": "Project",
+    "path": "web-publishing-porfolio02",
+    "featured": false,
+    "stacks": [
+      "Html",
+      "Css",
+      "Javascript"
     ]
   }
 ]

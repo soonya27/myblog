@@ -11,7 +11,7 @@ export default function PostContent({ post, id }: { post: PostData, id: string }
     const { title, content, date, path, description, category, stacks } = post;
     return (
         <>
-            <div className='relative max-h-[60vh] before:content-[""] before:absolute before:h-full before:w-full before:bg-gray-950/60'>
+            <div className='relative max-h-[60vh] before:content-[""] before:absolute before:h-full before:w-full before:bg-gray-950/80'>
                 <Image src={`/images/posts/${id}.png`} width={760} height={420} alt={title}
                     className='w-full  max-h-[60vh] object-cover' />
                 <div className='absolute top-0 left-1/2 -translate-x-1/2 flex flex-col items-center justify-center w-full h-full max-w-screen-2xl text-white px-3'>
