@@ -29,7 +29,7 @@ export default function Header() {
                     <ul className={`flex gap-4 [&>*]:text-white [&>*]:font-bold hover:[&>*]:text-black`}>
                         {
                             menuList.map(li => (
-                                <li key={li.text} className='relative' ><Link className={`${pathname.includes(li.href) && 'text-black after:content-[""] after:w-[0.35rem] after:h-[0.35rem] after:bg-main-pink after:block after:rounded-full after:absolute after:top-0 after:-right-1'}`} href={li.href}>{li.text}</Link></li>
+                                <li key={li.text} className='relative' ><Link className={`${pathname.includes(li.href) && 'text-black after:content-[""] after:w-[0.35rem] after:h-[0.35rem] after:bg-main-pink after:block after:rounded-full after:absolute after:top-0 after:-right-1'} text-xl`} href={li.href}>{li.text}</Link></li>
                             ))
                         }
                     </ul>

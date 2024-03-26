@@ -7,6 +7,7 @@ import AlertModal from './ui/AlertModal';
 import SendMailIcon from './ui/icons/SendMailIcon';
 import AlertModalContent from './AlertModalContent';
 import FailIcon from './ui/icons/FailIcon';
+import GridSpinner from './ui/GridSpinner';
 
 const DEFAULT_DATA = {
     from: '',
@@ -24,6 +25,7 @@ const inputStyle = `bg-[#f5f4fa] p-3 outline-none text-main-darkblue`;
 export default function ContactForm() {
     const [formData, setFormData] = useState<EmailData>(DEFAULT_DATA);
     const [openModal, setOpenModal] = useState(false);
+    const [loading, setLoading] = useState(false);
     const [modalData, setModalData] = useState<AlertModalData>({
         title: '', icon: <div></div>, detail: <div></div>, state: 'success'
     });
@@ -40,12 +42,13 @@ export default function ContactForm() {
 
     const onSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-
+        setLoading(true);
         sendContactEmail(formData)
             .then((data) => {
                 //메일 성공
                 setFormData(DEFAULT_DATA);
                 setOpenModal(true);
+                setLoading(false);
                 setModalData({
                     title: '이메일을 보냈습니다.',
                     icon: <SendMailIcon />,
@@ -67,7 +70,7 @@ export default function ContactForm() {
             }).finally(() => {
                 setTimeout(() => {
                     setOpenModal(false);
-                }, 3000)
+                }, 3500)
             })
     }
     return (
@@ -93,6 +96,13 @@ export default function ContactForm() {
                     </ModalPortal>
                 )
             )}
+            {
+                loading && (
+                    <div className='w-full h-screen fixed left-0 top-0 bg-gray-900/70 flex justify-center items-center z-50'>
+                        <GridSpinner />
+                    </div>
+                )
+            }
         </div>
     );
 }

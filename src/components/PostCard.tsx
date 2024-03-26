@@ -7,12 +7,14 @@ import CategoryButton from './CategoryButton';
 import StackIconCard from './StackIconCard';
 
 type Props = {
-    post: Post
+    post: Post;
+    priority?: boolean;
 }
 
 // export default function PostCard({ post }: { post: Post }) {
 export default function PostCard({
-    post: { title, date, category, path, description, stacks }
+    post: { title, date, category, path, description, stacks },
+    priority = false
 }: Props) {
 
     //하이드레이션 이슈
@@ -32,7 +34,9 @@ export default function PostCard({
             <Link href={`/posts/detail/${path}`} className=''>
                 <Image src={`/images/posts/${path}.png`} alt={title}
                     width={600} height={400}
-                    className='w-full h-52 md:h-40 object-cover' />
+                    className='w-full h-52 md:h-40 object-cover'
+                    priority={priority}
+                />
                 <div className='p-4 h-[9rem]'>
                     <div className='flex flex-col'>
                         <h3 className='text-lg font-bold w-full break-all truncate leading-none mb-2'>{title}</h3>

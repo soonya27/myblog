@@ -5,8 +5,11 @@
 📸This project is my portfolio website where you can explore my projects, learn more about me, and get in touch with me. 🚀
 
 (이 프로젝트는 지금 보고 계신 포트폴리오 사이트입니다.
-프론트엔드에는 Next.js와 tailwindCss로 제작되었고, 데이터 소스는 정적인 json파일을 이용하였습니다.
+
+프론트엔드에는 Next.js와 tailwindCss로 제작되었고, 데이터 소스는 정적인 json파일(md file)을 이용하였습니다.
+
 저를 소개하는 about me, project및 공부자료를 정리한 posts, 저에게 메일을 발송할 수 있는 contact로 구성되어있습니다.
+
 vercel을 이용하여 배포하였습니다.)
 
 

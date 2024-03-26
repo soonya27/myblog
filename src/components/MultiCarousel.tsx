@@ -18,9 +18,13 @@ const responsive = {
         items: 3
     },
     mobile: {
-        breakpoint: { max: 464, min: 0 },
+        breakpoint: { max: 765, min: 0 },
+        items: 2
+    },
+    mobile2: {
+        breakpoint: { max: 640, min: 0 },
         items: 1
-    }
+    },
 };
 export default function MultiCarousel({ children }: { children: React.ReactNode }) {
     return (

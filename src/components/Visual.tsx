@@ -18,8 +18,8 @@ export default function Visual() {
             className="relative bg-[url('../../public/images/visual_bg.jpg')] md:h-[63vh] lg:h-[95vh] bg-cover bg-center overflow-hidden pointer-events-none"
             onPointerMove={(e) => setPosition({ x: e.clientX, y: e.clientY })}
         >
-            <Link href="/about" className='peer h-full flex justify-center items-center my-5 transition-transform hover:scale-105 cursor-pointer pointer-events-auto'>
-                <Image src={visualImg} alt="visual image" width={1380} height={900} className='w-2/3 max-w-[900px]' />
+            <Link href="/about" className='peer h-full flex justify-center items-center my-5 transition-transform hover:scale-105 cursor-pointer pointer-events-none sm:pointer-events-auto'>
+                <Image src={visualImg} alt="visual image" width={1380} height={900} className='w-2/3 max-w-[900px]' priority />
             </Link>
             <div className={`w-28 h-10 fixed left-0 top-0 invisible peer-hover:visible z-10`}
                 style={{ transform: `translate(calc(-50% + ${position.x}px), calc(80% + ${position.y}px))` }}>
