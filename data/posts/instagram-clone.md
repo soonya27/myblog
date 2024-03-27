@@ -20,10 +20,12 @@ vercel을 이용하여 배포하였습니다.)
 ## 🌟Features (주요 기능)
 
 - User account creation and authentication with google (google을 통한 사용자 계정 생성 및 로그인) - NextAuth
-- Image uploading (이미지 업로드)
+- Image uploading (이미지 및 코멘트 게시물 업로드)
+- View Post Detail (게시글 상세보기 - modal portal)
 - Liking posts and commenting (게시물 좋아요 및 댓글 작성)
 - Following and unfollowing other users (다른 사용자 팔로우 및 팔로잉)
 - User profile pages (사용자 프로필 페이지)
+- Search User (사용자 검색)
 
 ## 🌟Tech Stack (기술 스택)
 
