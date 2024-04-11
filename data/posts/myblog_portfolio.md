@@ -30,8 +30,15 @@ vercel을 이용하여 배포하였습니다.)
   - TypeScript
   - Tailwind CSS
 
+  - react-multi-carousel
+  - react-icons
+  - react-markdown
+  - react-syntax-highlighter
+  - react-spinners
+
 - **Backend:**
   - Static JSON files
+  - nodemailer
 
 - **Others:**
   - Git (Version control)
