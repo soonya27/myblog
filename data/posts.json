@@ -27,6 +27,19 @@
     ]
   },
   {
+    "title": "shoppingmall redesign",
+    "description": "오아이오아이 쇼핑몰 홈페이지 리디자인 (react, firebase)",
+    "date": "2024-04-20",
+    "category": "Project",
+    "path": "shoppingmall_redesign",
+    "featured": true,
+    "stacks": [
+      "React",
+      "Javascript",
+      "Firebase"
+    ]
+  },
+  {
     "title": "modal Js",
     "description": "Javascript class를 이용한 Modal 생성 module 제작",
     "date": "2023-05-25",
@@ -58,6 +71,7 @@
     "stacks": [
       "Html",
       "Css",
+      "Javascript",
       "Jquery"
     ]
   },
@@ -71,6 +85,7 @@
     "stacks": [
       "Html",
       "Css",
+      "Javascript",
       "Jquery"
     ]
   }

@@ -33,6 +33,12 @@ vercel을 이용하여 배포하였습니다.)
   - Next.js
   - React.js
   - Tailwind CSS
+  
+  - SWR
+  - react-multi-carousel
+  - react-spinners
+  - react-icons
+  - timeago.js
 
 - **Backend:**
   - Next Auth Google Login

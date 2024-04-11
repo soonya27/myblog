@@ -7,6 +7,7 @@ import JavascriptIcon from './ui/stackIcons/JavascriptIcon';
 import CssIcon from './ui/stackIcons/CssIcon';
 import HtmlIcon from './ui/stackIcons/HtmlIcon';
 import JqueryIcon from './ui/stackIcons/JqueryIcon';
+import FirebaseIcon from './ui/stackIcons/FirebaseIcon';
 
 
 const iconList = [
@@ -18,6 +19,7 @@ const iconList = [
     { text: 'Html', icon: <HtmlIcon /> },
     { text: 'Css', icon: <CssIcon /> },
     { text: 'Jquery', icon: <JqueryIcon /> },
+    { text: 'Firebase', icon: <FirebaseIcon /> },
 ];
 
 export default function StackIconCard({ stack }: { stack: string }) {
