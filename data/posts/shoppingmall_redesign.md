@@ -1,6 +1,6 @@
-# Instagram Clone with Next.js (인스타그램 클론 코딩)
+# Shoppingmall site (오아이오아이 리디자인 웹페이지)
 
-## [website link](https://next-js-instagram-clone.vercel.app/)
+## [website link](https://master--glowing-sundae-46f2fe.netlify.app/)
 
 📸🌟  🚀
 
@@ -18,7 +18,7 @@
 
 
 
-vercel을 이용하여 배포하였습니다.)
+Netlify를 이용하여 배포하였습니다.)
 
 
 ## 🌟Features (주요 기능)
@@ -51,7 +51,7 @@ vercel을 이용하여 배포하였습니다.)
 
 
 - **Deployment:**
-  - 
+  - Netlify
 
 ## 🌟Feedback
 I'm always looking to improve! If you have any feedback, suggestions, or bug reports, feel free to open an issue or reach out to me directly.
