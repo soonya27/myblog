@@ -4,6 +4,8 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import localFont from 'next/font/local';
 import TopButton from '@/components/TopButton';
+import DarkModeButton from '@/components/DarkModeButton';
+import DarkModeContextProvider from '@/context/DarkModeContext';
 
 const pretendard = localFont({
   src: [
@@ -40,13 +42,16 @@ export default function RootLayout({
   return (
     <html lang="en" className={pretendard.className}>
       <body className='flex flex-col w-full mx-auto'>
-        <Header />
-        <main className='grow'>
-          {/* flex 중간 꽉채우기.. -> flex 자식요소 flex-grow :1 or flex: 1 1 auto (flex-auto) */}
-          {children}
-        </main>
-        <Footer />
-        <TopButton />
+        <DarkModeContextProvider>
+          <Header />
+          <main className='grow'>
+            {/* flex 중간 꽉채우기.. -> flex 자식요소 flex-grow :1 or flex: 1 1 auto (flex-auto) */}
+            {children}
+          </main>
+          <Footer />
+          <DarkModeButton />
+          <TopButton />
+        </DarkModeContextProvider>
         <div id="portal" />
       </body>
     </html>

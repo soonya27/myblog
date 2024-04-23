@@ -28,7 +28,7 @@ export default function TopButton() {
 
     return (
         <div onClick={handleClick}
-            className={`fixed bottom-[3%] right-[5%] w-10 h-10 p-2 border rounded-full bg-white z-[1000] cursor-pointer transition-all
+            className={`fixed bottom-[9%] right-[5%] w-10 h-10 p-2 border rounded-full bg-white z-[1000] cursor-pointer transition-all
         ${showButton ? 'opacity-1' : 'opacity-0'}`}>
             <p>
                 <ArrowTopIcon />
