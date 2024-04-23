@@ -48,10 +48,11 @@ Netlify를 이용하여 배포하였습니다.)
 - **Frontend:**
   - React.js
   - Javascript
-
+  - postcss
   - cloudinary
   - react-router-dom
   - react-query
+  - react-spinners
   - react-responsive
   - modal portal
   - swiper
@@ -76,10 +77,127 @@ Thank you for visiting my portfolio website!
 
 
 
-## 🌟Type Code block
+## 🌟UI
+### main
+![Shoppingmall_main](https://res.cloudinary.com/dpyobc2hx/image/upload/v1713856560/shoppingmall_redesign_main_ld279v.jpg)
 
-### src/util/authOptions.ts
+
+## 🌟query hooks Code block
+#### react query 캐시 관리 및 mutation, invalidation hooks로 관리
+
+### src/hooks/useProducts.js
 ```js
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import { addBookmarkByUser, addNewProduct, getProduct, removeFromBookmark } from '../api/firebase';
 
+
+export default function useProducts(uid) {
+    const queryClient = useQueryClient();
+
+    const productQuery = useQuery({
+        queryKey: ['products', uid || ''],
+        queryFn: async () => getProduct(uid),
+    });
+
+    const addProduct = useMutation(
+        {
+            mutationFn: ({ form, url }) => addNewProduct(form, { defaultImageUrl: url.defaultImageUrl, hoverImageUrl: url.hoverImageUrl }),
+            mutationKey: ['products'],
+            onSuccess: () => queryClient.invalidateQueries(['products'])
+        }
+    );
+
+    const addBookmark = useMutation(
+        {
+            mutationFn: ({ isBookmark, product }) => {
+                return isBookmark ? removeFromBookmark(uid, product.id)
+                    : addBookmarkByUser({ user: uid, product });
+            },
+            mutationKey: ['products'],
+            onSuccess: () => queryClient.invalidateQueries(['products'])
+        }
+    );
+
+    return { productQuery, addProduct, addBookmark }
+}
 
 ```
+
+### src/components/ProductsList/ProductsList.jsx  (productQuery)
+```js
+  import useProducts from '../../hooks/useProducts';
+
+  //hooks 수정 전 
+  const {
+      isLoading,
+      error,
+      data: products
+  } = useQuery({
+      queryKey: ['products', uid || ''],
+      queryFn: async () => getProduct(uid),
+  });
+
+    
+  //hooks 수정 후
+  const { productQuery: {
+      isLoading,
+      error,
+      data: products
+  } } = useProducts(uid);
+
+```
+
+
+### src/pages/AddProduct/AddProduct.jsx  (addProduct)
+```js
+  import useProducts from '../../hooks/useProducts';
+
+  //hooks 수정 전 
+  const queryClient = useQueryClient();
+  const addProduct = useMutation(
+      {
+          mutationFn: ({ form, url }) => addNewProduct(form, { defaultImageUrl: url.defaultImageUrl, hoverImageUrl: url.hoverImageUrl }),
+          mutationKey: ['products'],
+          onSuccess: () => queryClient.invalidateQueries(['products'])
+      }
+  );
+    
+
+
+  //hooks 수정 후
+    const { addProduct } = useProducts();
+
+
+  //---(사용하는곳)---
+  addProduct.mutate({
+      form, url: { defaultImageUrl, hoverImageUrl }
+  },{
+      onSuccess: () => {
+          console.log('성공적으로 추가');
+          setForm(DEFAUT_FORM);
+      }
+  });
+
+```
+
+
+### src/components/ProductCard/ProductCard.jsx  (addBookmark)
+```js
+  import useProducts from '../../hooks/useProducts';
+
+  //hooks 수정 전 
+  const queryClient = useQueryClient();
+  isBookmark ? await removeFromBookmark(uid, product.id)
+        : await addBookmarkByUser({ user: uid, product });
+    queryClient.invalidateQueries(['products']);
+    
+
+
+  //hooks 수정 후
+  const { addBookmark } = useProducts(uid);
+  addBookmark.mutate({
+      isBookmark, product
+  });
+
+```
+

@@ -45,6 +45,5 @@ Thank you for visiting my portfolio website!
 
 ## 🌟UI
 ### main
-![web-publishing-porfolio02](/images/posts/web-publishing-porfolio02-main.png)
-
+![web-publishing-porfolio02](https://res.cloudinary.com/dpyobc2hx/image/upload/v1713855859/web-publishing-porfolio02-main_puvkdo.png)
 

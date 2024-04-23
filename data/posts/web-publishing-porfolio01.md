@@ -43,12 +43,12 @@ Thank you for visiting my portfolio website!
 
 ## 🌟UI
 ### main
-![web-publishing-porfolio01](/images/posts/web-publishing-porfolio01-main.png)
+![web-publishing-porfolio01](https://res.cloudinary.com/dpyobc2hx/image/upload/v1713855857/web-publishing-porfolio01-main_hvve0e.png)
 ### sub01
-![web-publishing-porfolio01](/images/posts/web-publishing-porfolio01-sub1.png)
+![web-publishing-porfolio01](https://res.cloudinary.com/dpyobc2hx/image/upload/v1713855857/web-publishing-porfolio01-sub1_gnqfup.png)
 ### sub02
-![web-publishing-porfolio01](/images/posts/web-publishing-porfolio01-sub2.png)
+![web-publishing-porfolio01](https://res.cloudinary.com/dpyobc2hx/image/upload/v1713855858/web-publishing-porfolio01-sub2_ssiaa8.png)
 ### sub03
-![web-publishing-porfolio01](/images/posts/web-publishing-porfolio01-sub3.png)
+![web-publishing-porfolio01](https://res.cloudinary.com/dpyobc2hx/image/upload/v1713855859/web-publishing-porfolio01-sub3_vrsaer.png)
 
 
