@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import localFont from 'next/font/local';
+import TopButton from '@/components/TopButton';
 
 const pretendard = localFont({
   src: [
@@ -45,6 +46,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <TopButton />
         <div id="portal" />
       </body>
     </html>

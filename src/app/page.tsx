@@ -1,9 +1,6 @@
 import CarouselPosts from '@/components/CarouselPosts';
 import FeaturedPosts from '@/components/FeaturedPosts';
-import Profile from '@/components/Profile';
 import Visual from '@/components/Visual';
-import Button from '@/components/ui/Button';
-import Link from 'next/link';
 
 export default function HomePage() {
   return (
