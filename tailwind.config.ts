@@ -30,8 +30,8 @@ const config: Config = {
           '100%': { bottom: '100%', marginLeft: '0px', marginRight: '2.5rem', opacity: '0' },
         },
         showUp: {
-          '0%': { bottom: '3%', opacity: 0 },
-          '100%': { bottom: '9%', opacity: 1 },
+          '0%': { bottom: '3%', opacity: '0' },
+          '100%': { bottom: '9%', opacity: '1' },
         }
       }
     },
