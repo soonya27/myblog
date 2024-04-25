@@ -20,7 +20,7 @@ export type AlertModalData = {
     detail: JSX.Element;
     state: 'success' | 'fail';
 }
-const inputStyle = `bg-[#f5f4fa] p-3 outline-none text-main-darkblue`;
+const inputStyle = `bg-[#f5f4fa] p-3 outline-none text-main-darkblue dark:bg-slate-600 dark:text-slate-400`;
 
 export default function ContactForm() {
     const [formData, setFormData] = useState<EmailData>(DEFAULT_DATA);
@@ -75,7 +75,7 @@ export default function ContactForm() {
     }
     return (
         <div>
-            <form onSubmit={onSubmit} className='w-full flex flex-col gap-1 pt-2'>
+            <form onSubmit={onSubmit} className='w-full flex flex-col gap-1 pt-2 [&>label]:dark:text-white'>
                 <label htmlFor="from">Your Email</label>
                 <input type="email" name="from" id="from" required autoFocus value={formData.from} onChange={onChange}
                     className={inputStyle} />

@@ -28,7 +28,7 @@ export default function TopButton() {
 
     return (
         <div onClick={handleClick}
-            className={`fixed bottom-[2%] right-[5%] w-10 h-10 p-2 border rounded-full bg-white z-[1000] cursor-pointer transition-all dark:bg-slate-600 dark:border-slate-700
+            className={`fixed bottom-[2%] right-[5%] w-10 h-10 p-2 border rounded-full bg-white z-[1000] cursor-pointer transition-all dark:bg-slate-600 dark:border-slate-700 shadow-lg
         ${showButton ? 'animate-[showUp_.3s_linear_both]' : 'opacity-0'}`}>
             <p className='dark:text-white'>
                 <ArrowTopIcon />

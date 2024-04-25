@@ -55,6 +55,10 @@ body {
   border-radius: 10px;
 }
 
+.dark ::-webkit-scrollbar-thumb {
+  background: #ff9090;
+}
+
 ::-webkit-scrollbar-thumb:hover {
   --tw-bg-opacity: 1;
   background: #ff9090;
