@@ -1,6 +1,7 @@
 # Shoppingmall site (오아이오아이 리디자인 웹페이지)
 
 ## [website link](https://master--glowing-sundae-46f2fe.netlify.app/)
+## [github link](https://github.com/soonya27/shoppingmall)
 
 📸🌟 This project is a redesigned and renewed website for the IOIOI shopping mall.
 
@@ -84,15 +85,22 @@ Thank you for visiting my portfolio website!
 ### mobile
 ![Shoppingmall mobile](https://res.cloudinary.com/dpyobc2hx/image/upload/v1714022169/shoppingmall_redesign_mobile_xf8cr8.png)
 
-
-### auth user menu
+### auth user에 따른 메뉴 접근 제한
 ![Shoppingmall auth user](https://res.cloudinary.com/dpyobc2hx/image/upload/v1714022139/shoppingmall_redesign_auth_user_x3dfxx.png)
 
- 
+ ### firebase database 구조
+ ![firebase database](https://res.cloudinary.com/dpyobc2hx/image/upload/v1714023309/firebase_database_hkkjgh.png)
+
+
+
+#
+## 🌟구동 영상
+### [youtube link](https://youtu.be/JJqlFYGE1gw?si=5Cod4zknFLhlW1hz)
+
 
 
 ## 🌟query hooks Code block
-#### react query 캐시 관리 및 mutation, invalidation hooks로 관리
+### react query 캐시 관리 및 mutation, invalidation hooks로 관리
 
 ### src/hooks/useProducts.js
 ```js
@@ -209,4 +217,51 @@ export default function useProducts(uid) {
   });
 
 ```
+
+
+## 🌟bookmark 추가 및 products 쿼리 Code block
+#### cart목록과 같이 제품의 id를 bookmark목록에 저장후 getProduct()로 제품 목록을 가여올때 해당 user의 bookmark여부를 체크하여 product key값을 추가
+```js
+  export async function addBookmarkByUser({ user, product }) {
+      set(ref(database, 'bookmarks/' + user + '/' + product.id), {
+          ...product,
+      });
+  }
+
+  export async function removeFromBookmark(user, productId) {
+      return remove(ref(database, 'bookmarks/' + user + '/' + productId));
+  }
+
+  export async function getBookmarks(uid) {
+      return get(child(ref(database), `bookmarks/${uid}`)).then((snapshot) => {
+          if (snapshot.exists()) {
+              const data = Object.values(snapshot.val())
+              return data.map(data => data.id);
+          }
+          return [];
+      }).catch((error) => {
+          console.error(error);
+      });
+  }
+
+  export async function getProduct(uid) {
+      const bookmarkList = uid ? await getBookmarks(uid) : [];
+      return get(child(ref(database), `products`)).then((snapshot) => {
+          if (snapshot.exists()) {
+              const data = Object.values(snapshot.val())
+              const isBookmarkList = data.map(product => ({
+                  ...product,
+                  isBookmark: bookmarkList.includes(product.id)
+              }))
+              return isBookmarkList;
+          }
+          return [];
+      }).catch((error) => {
+          console.error(error);
+      });
+  }
+
+```
+
+
 
