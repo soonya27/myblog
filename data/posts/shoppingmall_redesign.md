@@ -78,8 +78,17 @@ Thank you for visiting my portfolio website!
 
 
 ## 🌟UI
-### main
-![Shoppingmall_main](https://res.cloudinary.com/dpyobc2hx/image/upload/v1713856560/shoppingmall_redesign_main_ld279v.jpg)
+### pc
+![Shoppingmall pc](https://res.cloudinary.com/dpyobc2hx/image/upload/v1714022177/shoppingmall_redesign_pc_ltvzva.png)
+
+### mobile
+![Shoppingmall mobile](https://res.cloudinary.com/dpyobc2hx/image/upload/v1714022169/shoppingmall_redesign_mobile_xf8cr8.png)
+
+
+### auth user menu
+![Shoppingmall auth user](https://res.cloudinary.com/dpyobc2hx/image/upload/v1714022139/shoppingmall_redesign_auth_user_x3dfxx.png)
+
+ 
 
 
 ## 🌟query hooks Code block
