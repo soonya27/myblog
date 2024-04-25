@@ -41,7 +41,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={pretendard.className}>
-      <body className='flex flex-col w-full mx-auto'>
+      <body className='flex flex-col w-full mx-auto dark:bg-slate-900'>
         <DarkModeContextProvider>
           <Header />
           <main className='grow'>

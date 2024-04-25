@@ -65,3 +65,13 @@ body .syntaxhighlighter .gutter {
   font-size: 0.85rem !important;
   font-family: 'Fira Code' !important;
 }
+
+
+.dark :is(.prose :where(h1, h2, h3, h4, h5, h6):not(:where([class~="not-prose"], [class~="not-prose"] *)),
+  .prose :where(strong):not(:where([class~="not-prose"], [class~="not-prose"] *))) {
+  color: #fff;
+}
+
+.dark :is(.prose :where(p, li):not(:where([class~="not-prose"], [class~="not-prose"] *))) {
+  color: #c1c1c1;
+}

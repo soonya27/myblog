@@ -25,7 +25,7 @@ export default function PostCard({
     // }, []);
 
     return (
-        <div className='block relative rounded-2xl overflow-hidden border hover:shadow-xl transition-transform hover:-translate-y-1 duration-200'>
+        <div className='block relative rounded-2xl overflow-hidden border hover:shadow-xl transition-transform hover:-translate-y-1 duration-200 dark:bg-slate-800 dark:border-slate-700'>
             <div className='absolute left-3 top-3 z-10'>
                 <Link href={`/posts/${category}`} className='inline-block h-full'>
                     <CategoryButton text={category} />
@@ -39,8 +39,8 @@ export default function PostCard({
                 />
                 <div className='p-4 h-[9rem]'>
                     <div className='flex flex-col'>
-                        <h3 className='text-lg font-bold w-full break-all truncate leading-none mb-2'>{title}</h3>
-                        <p className='w-full line-clamp-2 leading-none text-sm'>{description}</p>
+                        <h3 className='text-lg font-bold w-full break-all truncate leading-none mb-2 dark:text-white'>{title}</h3>
+                        <p className='w-full line-clamp-2 leading-none text-sm dark:text-slate-400'>{description}</p>
                     </div>
                     <time className='absolute bottom-2 left-1/2 -translate-x-1/2 self-center text-xs text-gray-500'>{date.toString()}</time>
                     <ul className='absolute bottom-9 right-3 flex gap-1 justify-end pt-4'>

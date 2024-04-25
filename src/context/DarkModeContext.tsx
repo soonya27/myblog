@@ -11,7 +11,14 @@ const DarkModeContext = createContext({ darkMode: false, toggleDarkMode: () => {
 
 export default function DarkModeContextProvider({ children }: Props) {
     const [darkMode, setDarkMode] = useState(false);
-    const toggleDarkMode = () => setDarkMode(prev => !prev)
+    const toggleDarkMode = () => setDarkMode(prev => {
+        if (prev) {
+            document.documentElement.classList.remove('dark');
+        } else {
+            document.documentElement.classList.add('dark');
+        }
+        return !prev;
+    })
 
     return (
         <DarkModeContext.Provider value={{ darkMode, toggleDarkMode }}>

@@ -9,7 +9,7 @@ export default function DarkModeButton() {
 
     return (
         <div onClick={toggleDarkMode}
-            className={`fixed bottom-[3%] right-[5%] w-10 h-10 p-2 border rounded-full z-[1000] cursor-pointer transition-all
+            className={`fixed bottom-[3%] right-[5%] w-10 h-10 p-2 border rounded-full z-[1001] cursor-pointer transition-all dark:border-slate-700
        ${darkMode ? 'bg-black' : 'bg-white'}`}>
             <p>
                 {

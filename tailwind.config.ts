@@ -28,6 +28,10 @@ const config: Config = {
           '60%': { bottom: '60%', marginLeft: '0px', marginRight: '2.5rem' },
           '80%': { bottom: '80%', marginLeft: '2.5rem', marginRight: '0px' },
           '100%': { bottom: '100%', marginLeft: '0px', marginRight: '2.5rem', opacity: '0' },
+        },
+        showUp: {
+          '0%': { bottom: '3%', opacity: 0 },
+          '100%': { bottom: '9%', opacity: 1 },
         }
       }
     },
@@ -35,5 +39,6 @@ const config: Config = {
   plugins: [
     require('@tailwindcss/typography'),
   ],
+  darkMode: 'selector'
 };
 export default config;
