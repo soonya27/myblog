@@ -59,6 +59,8 @@ export default function ContactForm() {
                 })
             }).catch((e) => {
                 //에러
+                setOpenModal(true);
+                setLoading(false);
                 setModalData({
                     title: '이메일 전송에 실패했습니다.',
                     icon: <FailIcon />,
