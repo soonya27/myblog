@@ -23,6 +23,8 @@ import ReactIcon from '@/components/ui/stackIcons/ReactIcon';
 import NextJsIcon from '@/components/ui/stackIcons/NextJsIcon';
 import FirebaseIcon from '@/components/ui/stackIcons/FirebaseIcon';
 import TailwindIcon from '@/components/ui/stackIcons/TailwindIcon';
+import PostCssIcon from '@/components/ui/stackIcons/PostCssIcon';
+
 import { AiFillGithub } from 'react-icons/ai';
 
 
@@ -51,7 +53,8 @@ export default function AboutPage() {
                 <div className='px-3 py-3 [&>ul>li>p]:text-sm [&>ul>li>p]:font-semibold [&>ul>li>p]:mt-1'>
                     <h2 className='text-3xl text-main-darkblue border-b-4 font-bold border-main-darkblue my-4 pb-2'>Skills</h2>
                     <strong className='block mb-3'>💻 Front End 💻</strong>
-                    <ul className='grid grid-cols-5 gap-5 lg:grid-cols-5 md:grid-cols-4 [&>li]:flex [&>li]:flex-col [&>li]:items-center px-6'>
+                    <ul className='grid grid-cols-5 gap-5 lg:grid-cols-5 md:grid-cols-4 [&>li]:flex [&>li]:flex-col [&>li]:items-center [&>li>p]:w-full
+    overflow: hidden; [&>li>p]:overflow-hidden [&>li>p]:whitespace-nowrap [&>li>p]:text-ellipsis [&>li>p]:break-all px-6'>
                         <li>
                             <Image src={htmlImg} alt="html" width={60} height={60} className='w-full ' />
                             <p>html</p>
@@ -71,6 +74,10 @@ export default function AboutPage() {
                         <li>
                             <TailwindIcon />
                             <p>tailwindCss</p>
+                        </li>
+                        <li>
+                            <PostCssIcon />
+                            <p>PostCssIcon</p>
                         </li>
                         <li>
                             <Image src={jsImg} alt="Javascript" width={60} height={60} className='w-full ' />
