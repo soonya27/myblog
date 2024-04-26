@@ -9,6 +9,7 @@
     "stacks": [
       "React",
       "NextJs",
+      "TailwindCss",
       "Typescript",
       "Sanity"
     ]
@@ -23,6 +24,7 @@
     "stacks": [
       "React",
       "NextJs",
+      "TailwindCss",
       "Typescript"
     ]
   },
@@ -36,6 +38,7 @@
     "stacks": [
       "React",
       "Javascript",
+      "PostCss",
       "Firebase"
     ]
   },

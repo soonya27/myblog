@@ -8,6 +8,8 @@ import CssIcon from './ui/stackIcons/CssIcon';
 import HtmlIcon from './ui/stackIcons/HtmlIcon';
 import JqueryIcon from './ui/stackIcons/JqueryIcon';
 import FirebaseIcon from './ui/stackIcons/FirebaseIcon';
+import TailwindIcon from './ui/stackIcons/TailwindIcon';
+import PostCssIcon from './ui/stackIcons/PostCssIcon';
 
 
 const iconList = [
@@ -18,6 +20,8 @@ const iconList = [
     { text: 'Javascript', icon: <JavascriptIcon /> },
     { text: 'Html', icon: <HtmlIcon /> },
     { text: 'Css', icon: <CssIcon /> },
+    { text: 'TailwindCss', icon: <TailwindIcon /> },
+    { text: 'PostCss', icon: <PostCssIcon /> },
     { text: 'Jquery', icon: <JqueryIcon /> },
     { text: 'Firebase', icon: <FirebaseIcon /> },
 ];
