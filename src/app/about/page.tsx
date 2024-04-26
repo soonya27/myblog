@@ -77,7 +77,7 @@ export default function AboutPage() {
                         </li>
                         <li>
                             <PostCssIcon />
-                            <p>PostCssIcon</p>
+                            <p>PostCss</p>
                         </li>
                         <li>
                             <Image src={jsImg} alt="Javascript" width={60} height={60} className='w-full ' />
