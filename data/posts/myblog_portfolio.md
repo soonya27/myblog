@@ -59,7 +59,7 @@ Thank you for visiting my portfolio website!
 
 ## 🌟mail전송 Code block
 
-### src/app/api/contact/route.ts
+### 📁src/app/api/contact/route.ts
 ```js
 import { sendEmail } from '@/service/email';
 import * as yup from 'yup';
@@ -88,7 +88,7 @@ export async function POST(req: Request) {
 ```
 
 
-### src/service/email.ts
+### 📁src/service/email.ts
 ```js
 import nodemailer from 'nodemailer';
 

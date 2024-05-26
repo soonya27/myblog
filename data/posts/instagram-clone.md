@@ -63,7 +63,7 @@ Thank you for visiting my portfolio website!
 
 ## 🌟Type Code block
 
-### src/model/user.ts
+### 📁src/model/user.ts
 ```js
 export type AuthUser = {
     id: string;
@@ -91,7 +91,7 @@ export type ProfileUser = SearchUser & {
 }
 ```
 
-### src/model/post.ts
+### 📁src/model/post.ts
 ```js
 export type Comment = {
     comment: string;
@@ -117,7 +117,7 @@ export type FullPost = {
 
 
 ## 🌟NextAuth - AuthOptions Code block
-### src/util/authOptions.ts
+### 📁src/util/authOptions.ts
 ```js
 import { addUser } from '@/service/user';
 import { NextAuthOptions } from "next-auth"
