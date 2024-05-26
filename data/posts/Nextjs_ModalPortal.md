@@ -1,6 +1,8 @@
 
 # Modal Portal 예시  
 
+
+
 ### 📁src > components > ui > ModalPortal.tsx   (해당 portal dom에 노드 생성)
 ```tsx
     import React, { useEffect } from 'react';
