@@ -42,7 +42,7 @@ export default App;
         //창이 refocused 되거나, 새로고침, 다시 데이터 연결될떄 refetche됨
     })
 
-    return (
+    // return (
        {products &&
           <ul>
               {products.map(product => (
@@ -51,10 +51,8 @@ export default App;
               )}
           </ul>
       }
-    )
+    // )
 ```
-
-
 
 ### 📁src > 컴포넌트.jsx   (네트워크 통신(사용) 하는곳)  예시2 - Fetch
 ```jsx
@@ -70,7 +68,7 @@ export default App;
   });
 
 
-  return (
+//   return (
       {products &&
         <ul className={styles.productList}>
             {products.map(product => (
@@ -79,7 +77,7 @@ export default App;
             )}
         </ul>
     }
-  )
+//   )
 ```
 
 

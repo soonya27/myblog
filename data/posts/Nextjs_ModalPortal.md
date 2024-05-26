@@ -1,8 +1,6 @@
 
 # Modal Portal 예시  
 
-
-
 ### 📁src > components > ui > ModalPortal.tsx   (해당 portal dom에 노드 생성)
 ```tsx
     import React, { useEffect } from 'react';
@@ -54,7 +52,7 @@
         onClose: () => void;
     }
     export default function PostModal({ onClose, children }: Props) {
-        return (
+        // return (
             <section onClick={(e) => {
                 //section(bg 영역 클릭시)
                 if (e.target === e.currentTarget) {
@@ -71,7 +69,7 @@
                     {children}
                 </div>
             </section>
-        );
+        // );
     }
 
 ```
@@ -87,7 +85,7 @@ export default function 컴포넌트() {
         setOpenModal(false);
     }
 
-    return (
+    // return (
         {
             openModal && (
                 <ModalPortal>
@@ -97,7 +95,7 @@ export default function 컴포넌트() {
                 </ModalPortal>
             )
         }
-    )
+    // )
 }
 
 ```
