@@ -4,7 +4,6 @@
 
 ```console
   yarn add @tanstack/react-query
-
 ```
 
 
