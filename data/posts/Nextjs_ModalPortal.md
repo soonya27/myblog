@@ -1,7 +1,7 @@
 
 # Modal Portal 예시  
 
-## 📁src > components > ui > ModalPortal.tsx   (해당 portal dom에 노드 생성)
+### 📁src > components > ui > ModalPortal.tsx   (해당 portal dom에 노드 생성)
 ```tsx
     import React, { useEffect } from 'react';
     import ReactDom from 'react-dom';
@@ -23,7 +23,7 @@
 ```
 
 
-## 📁src > app > layout.tsx   (Context 감싸주는 곳, div id portal dom 추가)
+### 📁src > app > layout.tsx   (Context 감싸주는 곳, div id portal dom 추가)
 ```tsx
     export default function RootLayout({
             children,
@@ -42,7 +42,7 @@
 
 
 
-## 📁src > components > PostModal.tsx   (ui modal custom component)
+### 📁src > components > PostModal.tsx   (ui modal custom component)
 ```tsx
     import React from 'react';
     import CloseIcon from './ui/icons/CloseIcon';
@@ -75,7 +75,7 @@
 ```
 
 
-## 📁src > 컴포넌트.tsx   (사용하는 곳)
+### 📁src > 컴포넌트.tsx   (사용하는 곳)
 ```tsx
 
 export default function 컴포넌트() {

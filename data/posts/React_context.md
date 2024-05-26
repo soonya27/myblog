@@ -2,7 +2,7 @@
 # AuthContext 예시
 
 
-## 📁src > AuthContext.jsx   (Context 정의)
+### 📁src > AuthContext.jsx   (Context 정의)
 
 ```jsx
   import { createContext, useContext, useEffect, useState } from 'react';
@@ -30,7 +30,7 @@
 ```
 
 
-## 📁src > App.js   (Context 감싸주는 곳)
+### 📁src > App.js   (Context 감싸주는 곳)
 ```js
   function App() {
     return (
@@ -45,7 +45,7 @@
 
 
 
-## 📁src > 컴포넌트.jsx   (Context 사용하는 곳)
+### 📁src > 컴포넌트.jsx   (Context 사용하는 곳)
 ```jsx
      const { user, uid, login, logout } = useAuthContent();
 ```

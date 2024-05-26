@@ -10,10 +10,10 @@ export default function DarkModeButton() {
     return (
         <div onClick={toggleDarkMode}
             className={`fixed bottom-[3%] right-[5%] w-10 h-10 p-2 border rounded-full z-[1001] cursor-pointer transition-all dark:border-slate-700 shadow-lg
-       ${darkMode ? 'bg-black' : 'bg-white'}`}>
+       ${darkMode ? 'bg-black text-white' : 'bg-white text-black'}`}>
             <p>
                 {
-                    darkMode ? <DarkIcon /> : <LightIcon />
+                    darkMode ? <LightIcon /> : <DarkIcon />
                 }
             </p>
         </div>

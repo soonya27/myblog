@@ -27,6 +27,7 @@ export default function MarkdownViewer({ content }: { content: string }) {
                         <code {...props}>{children}</code>
                     );
                 },
+                h1: (text) => <h1 className='py-3 pt-16 text-[#ff9090]'>{text.children}</h1>,
                 img: (image) => <Image className='h-full w-auto mx-auto'
                     src={image.src || ''} alt={image.alt || ''} width={500} height={350} />,
                 a: (props) => <a href={props.href} target='_blank' className='flex items-center w-fit text-main-blue hover:text-main-darkblue transition-all'>

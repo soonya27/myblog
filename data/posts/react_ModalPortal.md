@@ -1,7 +1,7 @@
 
 # Modal Portal 예시  (공통 모달(Alert Modal) -> context)
 
-## 📁src > components > ui > ModalPortal.jsx   (해당 portal dom에 노드 생성)
+### 📁src > components > ui > ModalPortal.jsx   (해당 portal dom에 노드 생성)
 ```jsx
   import ReactDom from 'react-dom';
 
@@ -17,7 +17,7 @@
 ```
 
 
-## 📁src > ModalContext.jsx   (ModalPortal을 감싸는 Context 정의)
+### 📁src > ModalContext.jsx   (ModalPortal을 감싸는 Context 정의)
 
 ```jsx
   import { createContext, useContext, useState } from 'react';
@@ -54,7 +54,7 @@
 ```
 
 
-## 📁src > App.js   (Context 감싸주는 곳, div id portal dom 추가)
+### 📁src > App.js   (Context 감싸주는 곳, div id portal dom 추가)
 ```js
   function App() {
     return (
@@ -70,7 +70,7 @@
 
 
 
-## 📁src > components > ui > AlertModal.jsx   (ui modal custom component)
+### 📁src > components > ui > AlertModal.jsx   (ui modal custom component)
 ```jsx
   import React from 'react';
   import styles from './AlertModal.module.css';
@@ -105,7 +105,7 @@
 ```
 
 
-## 📁src > 컴포넌트.jsx   (사용하는 곳)
+### 📁src > 컴포넌트.jsx   (사용하는 곳)
 ```jsx
 
 export default function 컴포넌트() {
