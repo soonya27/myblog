@@ -144,6 +144,21 @@ export default function AboutPage() {
                     </ul>
 
                 </div>
+
+                <div className='px-3 [&>p]:leading-tight [&>p]:text-sm [&>p]:mb-2'>
+                    <h2 className='text-3xl text-main-darkblue border-b-4 font-bold border-main-darkblue my-4 pb-2'>Introduce</h2>
+                    <p className='text-left p-2 text-sm'>안녕하세요, 프런트엔드 신입 개발자 편소영입니다.<br />
+                        저는 퍼블리셔로 3년간 근무하며 HTML, CSS, JavaScript를 기본으로 하는 웹 개발 업무를 맡아왔습니다.<br />
+                        특히 AJAX를 이용한 API 연결을 통해 프런트엔드 업무를 함께 수행하면서 화면의 기능을 구현하는 다양한 프로젝트 경험을 쌓았습니다. Java Spring 기반 환경에서 JSP를 활용한 퍼블리싱 및 프런트엔드 업무에도 익숙하며, 아주 간단한 SQL 쿼리 작성부터 Java 파일 작성까지의 경험도 보유하고 있습니다.<br />
+                        <br />
+                        최근에는 프런트엔드 프레임워크인 React와 Next.js를 학습하며 개인 프로젝트 세 개를 완성했습니다. Firebase와 Sanity를 이용하여 백엔드 서버를 구성하였고, Next.js를 사용하여 Node 환경의 API를 만들어 프로젝트를 진행했습니다. 이를 통해 최신 웹 개발 트렌드와 기술을 익히고, 실무에 적용할 수 있는 능력을 키웠습니다.<br />
+                        <br />
+                        저는 이러한 경험을 바탕으로 프런트엔드 개발자로서 회사에 기여하고자 합니다. 저의 개인 포트폴리오 사이트는 디자인부터 직접 구성하여 만들었으며, 이 과정에서 사용자 경험과 인터페이스의 중요성을 깊이 이해하게 되었습니다. 항상 공부하며 발전하는 개발자가 되기 위해 노력하고 있으며, 끊임없이 변화하는 기술 트렌드에 맞춰 제 역량을 키워가고 있습니다.<br />
+                        <br />
+                        항상 새로운 것을 배우고 도전하는 자세로, 팀과 함께 협력하여 최고의 결과를 만들어내는 개발자가 되겠습니다.<br />
+                        감사합니다.
+                    </p>
+                </div>
             </div>
             <div className='lg:w-4/6 p-7 md:p-12 text-base [&>dl>dd>p]:dark:text-slate-400'>
                 <dl>
