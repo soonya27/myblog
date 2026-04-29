@@ -1,4 +1,4 @@
-import { PostData } from '@/service/posts';
+import { PostData } from '@/model/post';
 import Image from 'next/image';
 import React from 'react';
 import CategoryButton from './CategoryButton';
