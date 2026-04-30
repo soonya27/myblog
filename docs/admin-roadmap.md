@@ -97,12 +97,22 @@ SUPABASE_SERVICE_ROLE_KEY=...
 
 ## Phase 2 — 인증 (Supabase Auth)
 
+### 이메일/비번 로그인
 - [x] `src/middleware.ts`에 `/admin/**` 보호 로직 추가
 - [x] `/admin/login` 페이지 + 로그인 폼
 - [x] 로그아웃 액션 (`src/app/admin/actions.ts`)
 - [x] 어드민 레이아웃 (`src/app/admin/layout.tsx`)
 - [x] 미로그인 상태로 `/admin` 접근 시 `/admin/login`으로 리다이렉트 검증 (curl 307)
-- [ ] **사용자 직접: 브라우저로 로그인 → `/admin` 진입 → 로그아웃 동작 확인**
+- [x] 사용자: 브라우저 이메일 로그인 동작 확인
+
+### Google OAuth (추가)
+- [x] Google Cloud Console OAuth 자격증명 생성 (사용자)
+- [x] Supabase Studio → Authentication → Providers → Google 활성화 (사용자)
+- [x] `.env.local`에 `ADMIN_EMAIL` 추가 (사용자)
+- [x] `.env.example`에 `ADMIN_EMAIL` 추가
+- [x] `src/app/auth/callback/route.ts` — code↔session 교환 + ADMIN_EMAIL 화이트리스트 검사
+- [x] `/admin/login` 페이지에 "Google로 로그인" 버튼 + 에러 메시지 처리
+- [ ] **사용자 직접: 브라우저로 Google 로그인 → 본인 계정 통과 확인**
 
 ---
 
@@ -168,4 +178,5 @@ SUPABASE_SERVICE_ROLE_KEY=...
 |------|-------|------|
 | 2026-04-29 | Phase 0 | 설계 확정, 가이드 작성 완료 |
 | 2026-04-29 | Phase 1 | Supabase 셋업·마이그레이션(12건)·서비스 레이어 교체·RLS 공개 읽기 정책 적용 완료. 4개 공개 페이지 200 OK 검증 |
-| 2026-04-29 | Phase 2 | middleware 보호, /admin/login 폼, 로그아웃 액션, 어드민 레이아웃 완성. 비인증 307 리다이렉트 검증. 브라우저 로그인 동작은 사용자 확인 대기 |
+| 2026-04-29 | Phase 2 | middleware 보호, /admin/login 폼, 로그아웃 액션, 어드민 레이아웃 완성. 비인증 307 리다이렉트 검증. 이메일 로그인 동작 확인됨 |
+| 2026-04-29 | Phase 2+ | Google OAuth 추가. /auth/callback 라우트에서 ADMIN_EMAIL 화이트리스트 검사. 로그인 페이지에 Google 버튼 + 에러 처리 |
