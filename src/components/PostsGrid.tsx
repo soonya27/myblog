@@ -1,4 +1,4 @@
-import { Post } from '@/service/posts';
+import { Post } from '@/model/post';
 import React from 'react';
 import PostCard from './PostCard';
 
