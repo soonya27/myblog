@@ -193,10 +193,22 @@ SUPABASE_SERVICE_ROLE_KEY=...
 
 ## Phase 8 — 마무리
 
-- [ ] 이미지 업로드 (Supabase Storage 또는 `public/`)
-- [ ] `revalidatePath`로 정적 캐시 갱신
-- [ ] slug 중복·길이 등 입력 검증
+- [x] 이미지 업로드 (Supabase Storage) — Phase 5+에서 선행 처리
+- [x] `revalidatePath`로 정적 캐시 갱신 (액션 헬퍼)
+- [ ] slug 중복·길이 등 입력 검증 강화
 - [ ] README에 어드민 사용법 한 줄 추가
+
+## 운영 — Supabase keep-alive
+
+Supabase 무료 티어는 7일 비활동 시 프로젝트가 자동 일시중지된다.
+Vercel Cron으로 가벼운 read 호출을 보내 활성 상태 유지.
+
+- [x] `src/app/api/keep-alive/route.ts` — `categories` 1행 read (anon 키, RLS 허용)
+- [x] `vercel.json` — `0 0 */3 * *` (매 3일 자정 UTC, Hobby 티어 OK)
+- [x] `CRON_SECRET` 옵션 — 설정 시 Bearer 토큰 인증 (Vercel Cron이 자동 첨부)
+- [x] `.env.example`에 `CRON_SECRET` 추가
+- [ ] **사용자 직접: Vercel 대시보드 → Settings → Environment Variables 에 `CRON_SECRET` 추가 (랜덤 문자열, 권장)**
+- [ ] **사용자 직접: 배포 후 Vercel → Cron 탭에서 등록 확인**
 
 ---
 
@@ -213,3 +225,4 @@ SUPABASE_SERVICE_ROLE_KEY=...
 | 2026-04-30 | Phase 5 | getAdminPostBySlug / updatePostBySlug, updatePostAction (slug 변경 시 양쪽 경로 revalidate), /admin/posts/[id]/edit 페이지. 액션 헬퍼로 create/update/delete 정리 |
 | 2026-04-30 | Phase 5+ | image_url 컬럼 + 백필 + Storage 버킷 SQL. uploadPostImage 헬퍼, PostForm 파일 입력/미리보기, PostCard·PostContent placeholder 처리. SQL 실행은 사용자 대기 |
 | 2026-04-30 | Phase 6 | admin-categories 서비스, /admin/categories 페이지(목록·추가·삭제 + 글 수/순서), DeleteCategoryButton(사용 중이면 차단), PostList의 카테고리 소스를 DB로 전환 |
+| 2026-05-21 | 운영 | /api/keep-alive Route Handler + vercel.json (매 3일 cron) + CRON_SECRET 옵션 인증. Supabase 무료 티어 7일 일시중지 방지 |
