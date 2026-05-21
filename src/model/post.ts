@@ -10,6 +10,7 @@ export type Post = {
     path: string;       // DB의 slug
     featured: boolean;
     stacks: string[];
+    image_url: string | null;
 };
 
 export type PostData = Post & {
@@ -29,6 +30,7 @@ export type PostRow = {
     stacks: string[];
     featured: boolean;
     is_public: boolean;
+    image_url: string | null;
     published_at: string;
     created_at: string;
     updated_at: string;

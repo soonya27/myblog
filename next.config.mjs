@@ -20,6 +20,11 @@ const nextConfig = {
         {
             protocol: 'https',
             hostname: 'youtu.be'
+        },
+        {
+            protocol: 'https',
+            hostname: '*.supabase.co',
+            pathname: '/storage/v1/object/public/**'
         }
         ]
     },

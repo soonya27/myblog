@@ -13,7 +13,7 @@ type Props = {
 
 // export default function PostCard({ post }: { post: Post }) {
 export default function PostCard({
-    post: { title, date, category, path, description, stacks },
+    post: { title, date, category, path, description, stacks, image_url },
     priority = false
 }: Props) {
 
@@ -32,11 +32,22 @@ export default function PostCard({
                 </Link>
             </div>
             <Link href={`/posts/detail/${path}`} className=''>
-                <Image src={`/images/posts/${path}.png`} alt={title}
-                    width={600} height={400}
-                    className='w-full h-52 md:h-40 object-cover'
-                    priority={priority}
-                />
+                {image_url ? (
+                    <Image src={image_url} alt={title}
+                        width={600} height={400}
+                        className='w-full h-52 md:h-40 object-cover'
+                        priority={priority}
+                    />
+                ) : (
+                    <div
+                        className='w-full h-52 md:h-40 bg-gradient-to-br from-purple-400 via-fuchsia-400 to-blue-500 flex items-center justify-center'
+                        aria-label={title}
+                    >
+                        <span className='text-white text-xl font-bold opacity-80 px-4 text-center line-clamp-2'>
+                            {category || title}
+                        </span>
+                    </div>
+                )}
                 <div className='p-4 h-[9rem]'>
                     <div className='flex flex-col'>
                         <h3 className='text-lg font-bold w-full break-all truncate leading-none mb-2 dark:text-white'>{title}</h3>

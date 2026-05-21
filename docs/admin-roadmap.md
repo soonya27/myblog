@@ -112,37 +112,63 @@ SUPABASE_SERVICE_ROLE_KEY=...
 - [x] `.env.example`에 `ADMIN_EMAIL` 추가
 - [x] `src/app/auth/callback/route.ts` — code↔session 교환 + ADMIN_EMAIL 화이트리스트 검사
 - [x] `/admin/login` 페이지에 "Google로 로그인" 버튼 + 에러 메시지 처리
-- [ ] **사용자 직접: 브라우저로 Google 로그인 → 본인 계정 통과 확인**
+- [x] 사용자: 브라우저 Google 로그인 통과 확인
+- [x] middleware에도 `ADMIN_EMAIL` 검사 추가 (이메일/비번 경로도 화이트리스트 적용)
 
 ---
 
 ## Phase 3 — 어드민 글 목록 & 삭제
 
-- [ ] `/admin` (글 목록 테이블: 제목·카테고리·공개여부·작성일·수정/삭제)
-- [ ] `DELETE /api/admin/posts/[id]` 라우트
-- [ ] 삭제 확인 모달
-- [ ] 검증: 삭제 → 목록·공개 페이지에서 사라짐
+- [x] `src/service/admin-posts.ts` (admin client로 비공개 포함 전체 조회)
+- [x] `/admin` 글 목록 테이블 (제목·카테고리·공개여부·작성일·수정/삭제 + featured 뱃지)
+- [x] `deletePostAction` 서버 액션 + `revalidatePath` 캐시 무효화
+- [x] `DeleteButton` 클라이언트 컴포넌트 + 확인 다이얼로그
+- [x] 사용자: `/admin`에서 12개 글 + 공개 컬럼 정상 노출 확인
+- [x] FEATURED 뱃지 의미 확인 (홈 대표글 플래그, 원본 데이터에 3개)
+- [ ] 삭제 동작 검증 → **Phase 4에서 새 글 작성 후 함께 검증** (기존 데이터 보존)
 
 ---
 
 ## Phase 4 — 글 작성 (에디터 + 미리보기)
 
-- [ ] `/admin/posts/new` 폼
-  - 제목·설명·카테고리(select)·스택(multi)·featured·**공개/비공개**·본문
-- [ ] 마크다운 에디터 + 좌우 미리보기 (`@uiw/react-md-editor`)
-- [ ] `POST /api/admin/posts` 라우트
-- [ ] slug 자동 생성 + 중복 검사
-- [ ] 검증: 작성 → 목록 노출 → 상세 페이지 정상 렌더
+- [x] `src/service/categories.ts` (getAllCategories)
+- [x] `src/service/admin-posts.ts`에 `createPost` 추가 (slug 중복 시 한국어 메시지)
+- [x] `src/lib/slugify.ts` 유틸
+- [x] `createPostAction` 서버 액션 (FormData 파싱 + 검증 + revalidate + redirect)
+- [x] `src/app/admin/posts/PostForm.tsx` 클라이언트 폼 (제목·slug·설명·카테고리·작성일·스택·공개·featured·본문)
+- [x] `@uiw/react-md-editor` 동적 import + `preview='live'` 좌우 미리보기
+- [x] `/admin/posts/new` 페이지
+- [ ] **사용자 직접: 새 글 작성 → 목록 노출 → 상세 페이지 렌더 → 삭제까지 검증**
 
 ---
 
 ## Phase 5 — 글 수정
 
-- [ ] `/admin/posts/[id]/edit` 폼 (기존 데이터 프리필)
-- [ ] `PUT /api/admin/posts/[id]` 라우트
-- [ ] 검증: 수정 → 즉시 반영
+- [x] `getAdminPostBySlug` / `updatePostBySlug` 서비스
+- [x] `updatePostAction` 서버 액션 (slug 변경 시 양쪽 경로 모두 revalidate)
+- [x] `parsePostFormData` / `revalidatePostPaths` 헬퍼로 create/update/delete 액션 정리
+- [x] `/admin/posts/[id]/edit` 페이지 (PostForm 재사용 + 기존 데이터 defaults)
+- [ ] **사용자 직접: 수정 → 즉시 반영, 삭제, 공개 사이트 동기화 통합 검증**
 
 ---
+
+## Phase 5+ — 대표 이미지 (Supabase Storage 업로드)
+
+### 사용자 직접 작업 (2단계)
+- [ ] Supabase Studio → SQL Editor → `supabase/schema-002-image-url.sql` 실행 (컬럼 추가 + 기존 12건 백필)
+- [ ] Supabase Studio → SQL Editor → `supabase/storage-setup.sql` 실행 (post-images 버킷 + 공개 읽기 정책)
+  - 또는 Studio → Storage → New bucket → name=`post-images`, public 체크 (UI로도 가능)
+
+### 코드 작업
+- [x] `posts.image_url TEXT NULL` 컬럼 + 기존 글 `/images/posts/{slug}.png` 로 백필 SQL
+- [x] `post-images` 버킷 + 공개 읽기 정책 SQL
+- [x] `next.config.mjs`에 `*.supabase.co/storage/v1/object/public/**` remotePatterns 추가
+- [x] `model/post.ts`, `service/posts.ts`, `service/admin-posts.ts`에 `image_url` 반영
+- [x] `src/lib/supabase/storage.ts` — service_role 업로드 헬퍼 (`uploadPostImage`)
+- [x] `parsePostFormData` — 새 파일 업로드 / 기존 유지 / 제거 3가지 분기 처리
+- [x] `PostForm` — 파일 input + 미리보기 (blob URL) + "이미지 제거" 버튼
+- [x] `PostCard`, `PostContent` — `image_url` 있으면 사용, 없으면 그라디언트 placeholder
+- [ ] **사용자 직접: 위 두 SQL 실행 → 새 글에 이미지 첨부 + 첨부 안 한 글 placeholder 노출 확인**
 
 ## Phase 6 — 카테고리 관리
 
@@ -180,3 +206,7 @@ SUPABASE_SERVICE_ROLE_KEY=...
 | 2026-04-29 | Phase 1 | Supabase 셋업·마이그레이션(12건)·서비스 레이어 교체·RLS 공개 읽기 정책 적용 완료. 4개 공개 페이지 200 OK 검증 |
 | 2026-04-29 | Phase 2 | middleware 보호, /admin/login 폼, 로그아웃 액션, 어드민 레이아웃 완성. 비인증 307 리다이렉트 검증. 이메일 로그인 동작 확인됨 |
 | 2026-04-29 | Phase 2+ | Google OAuth 추가. /auth/callback 라우트에서 ADMIN_EMAIL 화이트리스트 검사. 로그인 페이지에 Google 버튼 + 에러 처리 |
+| 2026-04-30 | Phase 3 | middleware에 ADMIN_EMAIL 검사 추가. admin-posts 서비스, /admin 글 목록 테이블, 삭제 액션 + 확인 다이얼로그 구현. 목록 노출은 사용자 확인됨, 삭제는 Phase 4에서 새 글로 검증 |
+| 2026-04-30 | Phase 4 | categories 서비스, slugify 유틸, createPost + createPostAction, PostForm 클라이언트 컴포넌트, /admin/posts/new 페이지. @uiw/react-md-editor 라이브 미리보기 적용 |
+| 2026-04-30 | Phase 5 | getAdminPostBySlug / updatePostBySlug, updatePostAction (slug 변경 시 양쪽 경로 revalidate), /admin/posts/[id]/edit 페이지. 액션 헬퍼로 create/update/delete 정리 |
+| 2026-04-30 | Phase 5+ | image_url 컬럼 + 백필 + Storage 버킷 SQL. uploadPostImage 헬퍼, PostForm 파일 입력/미리보기, PostCard·PostContent placeholder 처리. SQL 실행은 사용자 대기 |

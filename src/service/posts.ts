@@ -2,7 +2,7 @@ import { Post, PostData, PostRow } from '@/model/post';
 import { createClient } from '@/lib/supabase/server';
 
 const POST_SELECT = `
-    slug, title, description, featured, stacks, published_at,
+    slug, title, description, featured, stacks, image_url, published_at,
     categories(name)
 ` as const;
 
@@ -15,6 +15,7 @@ function rowToPost(row: PostRow): Post {
         path: row.slug,
         featured: row.featured,
         stacks: row.stacks,
+        image_url: row.image_url,
     };
 }
 
