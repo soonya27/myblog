@@ -53,7 +53,7 @@ export default function PostCard({
                         <h3 className='text-lg font-bold w-full break-all truncate leading-none mb-2 dark:text-white'>{title}</h3>
                         <p className='w-full line-clamp-2 leading-none text-sm dark:text-slate-400'>{description}</p>
                     </div>
-                    <time className='absolute bottom-2 left-1/2 -translate-x-1/2 self-center text-xs text-gray-500'>{date.toString()}</time>
+                    <time className='absolute bottom-2 left-1/2 -translate-x-1/2 self-center text-xs text-gray-500'>{date.toISOString().slice(0, 10)}</time>
                     <ul className='absolute bottom-9 right-3 flex gap-1 justify-end pt-4'>
                         {
                             stacks.map(stack => (

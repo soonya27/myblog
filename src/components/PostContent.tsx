@@ -33,7 +33,7 @@ export default function PostContent({ post, id }: { post: PostData, id: string }
                     </ul>
                     <div className='flex justify-center items-center mt-4'>
                         <AiTwotoneCalendar />
-                        <p className='text-gray-100/60 ml-3 text-[2.5vw] md:text-lg'>{date.toString()}</p>
+                        <p className='text-gray-100/60 ml-3 text-[2.5vw] md:text-lg'>{date.toISOString().slice(0, 10)}</p>
                     </div>
                 </div>
             </div>
