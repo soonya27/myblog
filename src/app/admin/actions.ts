@@ -4,6 +4,10 @@ import { createClient } from '@/lib/supabase/server';
 import { slugify } from '@/lib/slugify';
 import { uploadPostImage } from '@/lib/supabase/storage';
 import {
+    createCategory,
+    deleteCategoryById,
+} from '@/service/admin-categories';
+import {
     AdminPostFull,
     createPost,
     deletePostBySlug,
@@ -24,6 +28,30 @@ export async function deletePostAction(formData: FormData) {
 
     await deletePostBySlug(slug);
     revalidatePostPaths(slug);
+}
+
+function revalidateCategoryPaths() {
+    revalidatePath('/admin/categories');
+    revalidatePath('/admin/posts/new');
+    revalidatePath('/posts');
+    revalidatePath('/');
+}
+
+export async function createCategoryAction(formData: FormData) {
+    const name = String(formData.get('name') ?? '').trim();
+    const slugInput = String(formData.get('slug') ?? '').trim();
+    if (!name) throw new Error('카테고리 이름을 입력하세요');
+
+    const slug = slugInput || slugify(name);
+    await createCategory(name, slug);
+    revalidateCategoryPaths();
+}
+
+export async function deleteCategoryAction(formData: FormData) {
+    const id = String(formData.get('id') ?? '');
+    if (!id) return;
+    await deleteCategoryById(id);
+    revalidateCategoryPaths();
 }
 
 async function parsePostFormData(formData: FormData): Promise<AdminPostFull> {

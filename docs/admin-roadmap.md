@@ -172,11 +172,13 @@ SUPABASE_SERVICE_ROLE_KEY=...
 
 ## Phase 6 — 카테고리 관리
 
-- [ ] `/admin/categories` 페이지 (목록·추가·삭제·순서)
-- [ ] `POST/DELETE /api/admin/categories` 라우트
-- [ ] 사용 중인 카테고리 삭제 차단
-- [ ] `PostsNavbar` 등 카테고리 하드코딩 제거 → 동적 로드
-- [ ] 검증: 새 카테고리 → select와 메뉴에 노출
+- [x] `src/service/admin-categories.ts` (목록 + 글 수, 생성, 삭제)
+- [x] `createCategoryAction` / `deleteCategoryAction` 서버 액션
+- [x] `/admin/categories` 페이지 (목록·추가·삭제, 글 수·순서 표시)
+- [x] `DeleteCategoryButton` — 글 수 > 0 이면 "삭제 불가" 비활성화
+- [x] FK 위반(`23503`)·중복(`23505`) 시 한국어 에러 메시지
+- [x] `PostList` → DB의 `getAllCategories`로 변경 (글 없는 새 카테고리도 메뉴 노출)
+- [ ] **사용자 직접: `/admin/categories`에서 4개 노출 + 추가 + 새 글로 사용 + 삭제 동작 확인**
 
 ---
 
@@ -210,3 +212,4 @@ SUPABASE_SERVICE_ROLE_KEY=...
 | 2026-04-30 | Phase 4 | categories 서비스, slugify 유틸, createPost + createPostAction, PostForm 클라이언트 컴포넌트, /admin/posts/new 페이지. @uiw/react-md-editor 라이브 미리보기 적용 |
 | 2026-04-30 | Phase 5 | getAdminPostBySlug / updatePostBySlug, updatePostAction (slug 변경 시 양쪽 경로 revalidate), /admin/posts/[id]/edit 페이지. 액션 헬퍼로 create/update/delete 정리 |
 | 2026-04-30 | Phase 5+ | image_url 컬럼 + 백필 + Storage 버킷 SQL. uploadPostImage 헬퍼, PostForm 파일 입력/미리보기, PostCard·PostContent placeholder 처리. SQL 실행은 사용자 대기 |
+| 2026-04-30 | Phase 6 | admin-categories 서비스, /admin/categories 페이지(목록·추가·삭제 + 글 수/순서), DeleteCategoryButton(사용 중이면 차단), PostList의 카테고리 소스를 DB로 전환 |
