@@ -1,5 +1,7 @@
 import NavigatorPostButton from '@/components/NavigatorPostButton';
 import PostContent from '@/components/PostContent';
+import PostsLoadError from '@/components/ui/PostsLoadError';
+import { PostData } from '@/model/post';
 import { getPostDetail } from '@/service/posts';
 import React from 'react';
 
@@ -11,7 +13,13 @@ type Props = {
     }
 }
 export default async function PostDetailpPage({ params: { id } }: Props) {
-    const post = await getPostDetail(id);
+    let post: PostData;
+    try {
+        post = await getPostDetail(id);
+    } catch (error) {
+        console.error('게시글 상세 불러오기 실패:', error);
+        return <PostsLoadError />;
+    }
     const { next, prev } = post;
     const isOne = !next || !prev;
 
